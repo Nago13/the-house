@@ -14,16 +14,34 @@ import Image from "next/image";
 import Link from "next/link";
 import contestants from "@/lib/contestants";
 
+// ── Ticker colours ─────────────────────────────────────────────────────────
+
+const TICKER_COLOR: Record<string, string> = {
+  MOM:      "#F5C842",
+  DAD:      "#A855F7",
+  GNSP:     "#F59E0B",
+  SHIB:     "#FF6B2B",
+  DOGE:     "#C9A84C",
+  PEPE:     "#22c55e",
+  FLOKI:    "#60a5fa",
+  PENGU:    "#93c5fd",
+  FARTCOIN: "#84cc16",
+  PHNIX:    "#f97316",
+};
+
+function tickerColor(ticker: string, generation: number): string {
+  return TICKER_COLOR[ticker] ?? (generation === 0 ? "#6b7280" : "#a78bfa");
+}
+
 // ── Custom node ────────────────────────────────────────────────────────────
 
 function ContestantNode({ data }: NodeProps) {
-  const tickerColor =
-    data.ticker === "MOM"   ? "#c8894a" :
-    data.ticker === "DAD"   ? "#2dd4bf" :
-    "#a78bfa";
-
+  const color = tickerColor(data.ticker, data.generation);
   return (
-    <div className="w-40 bg-house-surface border border-house-border rounded-xl overflow-hidden hover:border-house-amber/50 transition-colors">
+    <div
+      className="w-40 bg-house-surface rounded-xl overflow-hidden hover:scale-[1.03] transition-transform"
+      style={{ border: `1px solid ${color}33` }}
+    >
       <Handle type="target" position={Position.Top}    style={{ background: "#262626", border: "none" }} />
 
       <Link href={`/profile/${data.token_address}`}>
@@ -35,10 +53,18 @@ function ContestantNode({ data }: NodeProps) {
             className="object-cover"
             onError={() => {}}
           />
+          {data.generation > 0 && (
+            <span
+              className="absolute top-1.5 right-1.5 text-[8px] font-mono tracking-widest px-1.5 py-0.5 rounded-full"
+              style={{ background: `${color}22`, color, border: `1px solid ${color}44` }}
+            >
+              GEN {data.generation}
+            </span>
+          )}
         </div>
         <div className="px-3 py-2">
-          <p className="font-bold text-xs text-house-text">{data.name}</p>
-          <p className="font-mono text-xs" style={{ color: tickerColor }}>
+          <p className="font-bold text-xs text-house-text truncate">{data.name}</p>
+          <p className="font-mono text-xs truncate" style={{ color }}>
             ${data.ticker} · Gen {data.generation}
           </p>
         </div>
@@ -51,43 +77,73 @@ function ContestantNode({ data }: NodeProps) {
 
 const nodeTypes = { contestant: ContestantNode };
 
-// ── Build graph ────────────────────────────────────────────────────────────
+// ── Layout ─────────────────────────────────────────────────────────────────
+
+const NODE_W  = 160;
+const H_GAP   = 44;   // gap between nodes in same row
+const STEP    = NODE_W + H_GAP;
+const V_GAP   = 220;  // vertical distance between generations
 
 function buildGraph() {
   const nodes: Node[] = [];
   const edges: Edge[] = [];
 
-  // Layout: gen 0 at top (MOM left, DAD right), gen 1 centered below
-  const layout: Record<string, { x: number; y: number }> = {
-    MOM:   { x: 80,  y: 40  },
-    DAD:   { x: 340, y: 40  },
-    CHILD: { x: 210, y: 280 },
-  };
-
+  // Separate by generation
+  const byGen: Record<number, typeof contestants> = {};
   for (const c of contestants) {
-    const pos = layout[c.ticker] ?? { x: 200, y: 40 + c.generation * 240 };
-    nodes.push({
-      id:       c.token_address,
-      type:     "contestant",
-      position: pos,
-      data:     c,
-    });
+    (byGen[c.generation] ??= []).push(c);
+  }
 
-    // Edges from each parent
-    for (const parentAddr of c.parents) {
-      const parent = contestants.find((p) => p.token_address === parentAddr);
-      if (!parent) continue;
-      edges.push({
-        id:          `${parentAddr}->${c.token_address}`,
-        source:      parentAddr,
-        target:      c.token_address,
-        animated:    false,
-        style:       { stroke: "#333", strokeWidth: 1.5 },
-        label:       "parent",
-        labelStyle:  { fill: "#6b6560", fontSize: 9 },
-        labelBgStyle:{ fill: "#0a0a0a" },
-      });
-    }
+  // Track final x positions by address so children can center on parents
+  const posMap: Record<string, { x: number; y: number }> = {};
+
+  // Gen 0: lay out left-to-right, centred around x=0
+  const gen0 = byGen[0] ?? [];
+  const totalW0 = gen0.length * NODE_W + (gen0.length - 1) * H_GAP;
+  const startX0 = -(totalW0 / 2);
+  gen0.forEach((c, i) => {
+    const pos = { x: startX0 + i * STEP, y: 0 };
+    posMap[c.token_address] = pos;
+    nodes.push({ id: c.token_address, type: "contestant", position: pos, data: c });
+  });
+
+  // Gen 1+: position each child centred over its parents, row by row
+  const maxGen = Math.max(...contestants.map((c) => c.generation));
+  for (let gen = 1; gen <= maxGen; gen++) {
+    const genNodes = byGen[gen] ?? [];
+    const y = gen * (NODE_W + V_GAP);
+
+    genNodes.forEach((c, i) => {
+      // Centre child under its parents' midpoint
+      let x = startX0 + i * STEP; // fallback if no parents resolved
+      const resolvedParents = c.parents
+        .map((addr) => posMap[addr])
+        .filter(Boolean);
+      if (resolvedParents.length > 0) {
+        x = resolvedParents.reduce((sum, p) => sum + p.x, 0) / resolvedParents.length;
+      }
+
+      const pos = { x, y };
+      posMap[c.token_address] = pos;
+      nodes.push({ id: c.token_address, type: "contestant", position: pos, data: c });
+
+      // Edges from parents — only addresses that actually exist as nodes
+      for (const parentAddr of c.parents) {
+        if (!posMap[parentAddr]) continue;
+        const parentC = contestants.find((p) => p.token_address === parentAddr);
+        const edgeColor = parentC ? tickerColor(parentC.ticker, parentC.generation) : "#444";
+        edges.push({
+          id:           `${parentAddr}->${c.token_address}`,
+          source:       parentAddr,
+          target:       c.token_address,
+          animated:     false,
+          style:        { stroke: edgeColor, strokeWidth: 1.5, opacity: 0.5 },
+          label:        "parent",
+          labelStyle:   { fill: "#6b6560", fontSize: 9 },
+          labelBgStyle: { fill: "#0a0a0a" },
+        });
+      }
+    });
   }
 
   return { nodes, edges };
@@ -97,6 +153,7 @@ function buildGraph() {
 
 export default function TreePage() {
   const { nodes, edges } = buildGraph();
+  const maxGen = Math.max(...contestants.map((c) => c.generation));
 
   return (
     <div style={{ width: "100vw", height: "calc(100vh - 3.5rem)" }}>
@@ -105,7 +162,7 @@ export default function TreePage() {
           Family Tree
         </p>
         <p className="font-mono text-house-muted text-xs mt-0.5">
-          {contestants.length} node{contestants.length !== 1 ? "s" : ""} · Gen 0–{Math.max(...contestants.map((c) => c.generation))}
+          {contestants.length} nodes · Gen 0–{maxGen}
         </p>
       </div>
 
@@ -114,7 +171,7 @@ export default function TreePage() {
         edges={edges}
         nodeTypes={nodeTypes}
         fitView
-        fitViewOptions={{ padding: 0.3 }}
+        fitViewOptions={{ padding: 0.25 }}
         proOptions={{ hideAttribution: true }}
       >
         <Background variant={BackgroundVariant.Dots} gap={24} size={1} color="#1a1a1a" />
