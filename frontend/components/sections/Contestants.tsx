@@ -94,16 +94,6 @@ function ContestantCard({
         style={{ background: `linear-gradient(90deg, transparent, ${color}88, transparent)` }}
       />
 
-      {/* GEN 1 badge */}
-      {isChild && (
-        <div
-          className="absolute top-4 right-4 text-[9px] tracking-[0.25em] uppercase px-2 py-0.5 rounded-full font-medium z-10"
-          style={{ background: `${color}18`, color, border: `1px solid ${color}44` }}
-        >
-          GEN 1
-        </div>
-      )}
-
       {/* Ambient glow */}
       <div
         className="absolute -top-20 left-1/2 -translate-x-1/2 w-64 h-64 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
@@ -121,6 +111,14 @@ function ContestantCard({
               >
                 ${c.ticker}
               </span>
+              {isChild && (
+                <span
+                  className="text-[9px] tracking-[0.2em] uppercase px-1.5 py-0.5 rounded-full font-medium"
+                  style={{ background: `${color}18`, color, border: `1px solid ${color}44` }}
+                >
+                  GEN 1
+                </span>
+              )}
               <span className="text-[10px] text-emerald-400">{TOKEN_PRICE[c.ticker] ?? ""}</span>
             </div>
             <h3
