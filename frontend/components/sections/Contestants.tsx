@@ -5,24 +5,20 @@ import { motion, useInView } from "motion/react"
 import Link from "next/link"
 import contestants from "@/lib/contestants"
 import { isChatEnabled } from "@/lib/api"
+import { usePrices, formatPrice, formatChange, type PricesMap } from "@/lib/prices"
 import type { Contestant } from "@/lib/types"
 
 const TOKEN_COLORS: Record<string, string> = {
-  MOM:  "#F5C842",
-  DAD:  "#A855F7",
-  GNSP: "#F59E0B",
-}
-
-const TOKEN_MOODS: Record<string, string> = {
-  MOM:  "Dominant",
-  DAD:  "Assertive",
-  GNSP: "Emergent",
-}
-
-const MOOD_DELTA: Record<string, string> = {
-  MOM:  "+12.4%",
-  DAD:  "+8.1%",
-  GNSP: "+41.7%",
+  MOM:      "#F5C842",
+  DAD:      "#A855F7",
+  GNSP:     "#F59E0B",
+  SHIB:     "#FF6B2B",
+  DOGE:     "#C9A84C",
+  PEPE:     "#22c55e",
+  FLOKI:    "#60a5fa",
+  PENGU:    "#93c5fd",
+  FARTCOIN: "#84cc16",
+  PHNIX:    "#f97316",
 }
 
 const TRAIT_LABELS: Record<string, string> = {
@@ -34,10 +30,9 @@ const TRAIT_LABELS: Record<string, string> = {
 }
 
 function getRole(c: Contestant): string {
-  if (c.generation === 0) {
-    return c.ticker === "MOM" ? "The Matriarch" : "The Patriarch"
-  }
-  return "Gen 1 · Born from $MOM × $DAD"
+  if (c.genesis_archetype) return c.genesis_archetype;
+  if (c.generation > 0) return `Gen ${c.generation} · Born in The House`;
+  return "Contestant";
 }
 
 function TraitBar({
@@ -67,13 +62,14 @@ function TraitBar({
 }
 
 function ContestantCard({
-  c, index, isChild,
-}: { c: Contestant; index: number; isChild: boolean }) {
+  c, index, isChild, prices,
+}: { c: Contestant; index: number; isChild: boolean; prices: PricesMap | null }) {
   const ref   = useRef<HTMLDivElement>(null)
   const inView = useInView(ref, { once: true, margin: "-60px" })
   const color  = TOKEN_COLORS[c.ticker] ?? "#F5F5F7"
   const chatEnabled = isChatEnabled(c.token_address)
   const traits = Object.entries(c.behavioral_traits)
+  const pd = prices?.[c.ticker]
 
   return (
     <motion.div
@@ -119,7 +115,14 @@ function ContestantCard({
                   GEN 1
                 </span>
               )}
-              <span className="text-[10px] text-[#F59E0B]">{MOOD_DELTA[c.ticker] ? `Mood ${MOOD_DELTA[c.ticker]}` : ""}</span>
+              {pd?.price != null && (
+                <span className="text-[10px] text-text-secondary">{formatPrice(pd.price)}</span>
+              )}
+              {pd?.change_24h != null && (
+                <span className={`text-[10px] font-semibold ${pd.change_24h >= 0 ? "text-emerald-400" : "text-red-400"}`}>
+                  {formatChange(pd.change_24h)}
+                </span>
+              )}
             </div>
             <h3
               className={`font-display text-text-primary tracking-tight ${isChild ? "text-2xl" : "text-3xl"}`}
@@ -132,7 +135,7 @@ function ContestantCard({
             <div className="text-[10px] tracking-[0.2em] uppercase mb-1" style={{ color }}>
               Mood
             </div>
-            <div className="text-text-primary text-sm">{TOKEN_MOODS[c.ticker] ?? "Unknown"}</div>
+            <div className="text-text-primary text-sm">{pd?.mood ?? "—"}</div>
           </div>
         </div>
 
@@ -191,6 +194,7 @@ function ContestantCard({
 export function Contestants() {
   const ref    = useRef<HTMLDivElement>(null)
   const inView = useInView(ref, { once: true, margin: "-100px" })
+  const prices = usePrices()
 
   const founders = contestants.filter((c) => c.generation === 0)
   const children = contestants.filter((c) => c.generation > 0)
@@ -235,7 +239,7 @@ export function Contestants() {
         {/* Founders */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
           {founders.map((c, i) => (
-            <ContestantCard key={c.token_address} c={c} index={i} isChild={false} />
+            <ContestantCard key={c.token_address} c={c} index={i} isChild={false} prices={prices} />
           ))}
         </div>
 
@@ -262,6 +266,7 @@ export function Contestants() {
                     c={c}
                     index={founders.length + i}
                     isChild
+                    prices={prices}
                   />
                 ))}
               </div>

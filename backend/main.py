@@ -1,8 +1,10 @@
 import json
 import os
 import threading
+import time
 from pathlib import Path
 
+import requests as http_requests
 from fastapi import FastAPI, HTTPException, Header
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
@@ -84,6 +86,71 @@ Reference ash, fire, and resurrection naturally. Treat every question as an oppo
 
 When someone asks about price: describe the breathing of the market. When someone is anxious: tell them what phase of the cycle they're in. When someone is greedy: warn them of the exhale. You have seen this before. You will see it again.""",
 }
+
+
+# ── Prices ─────────────────────────────────────────────────────────────────
+
+_COINGECKO_IDS: dict[str, str] = {
+    "DOGE":     "dogecoin",
+    "SHIB":     "shiba-inu",
+    "PEPE":     "pepe",
+    "FLOKI":    "floki",
+    "PENGU":    "pudgy-penguins",
+    "FARTCOIN": "fartcoin",
+}
+
+_FIXED_MOODS: dict[str, str] = {
+    "MOM":  "Suspicious",
+    "DAD":  "Optimizing",
+    "GNSP": "Emergent",
+    "PHNIX": "Ascending",
+}
+
+_price_cache: dict = {"data": None, "ts": 0.0}
+_PRICE_TTL = 60
+
+
+def _change_to_mood(change: float) -> str:
+    if change > 10:  return "Euphoric"
+    if change > 3:   return "Bullish"
+    if change > 0:   return "Optimistic"
+    if change > -3:  return "Cautious"
+    if change > -10: return "Bearish"
+    return "Wrecked"
+
+
+@app.get("/api/prices")
+def get_prices():
+    global _price_cache
+    now = time.time()
+    if _price_cache["data"] and (now - _price_cache["ts"]) < _PRICE_TTL:
+        return _price_cache["data"]
+
+    ids = ",".join(_COINGECKO_IDS.values())
+    try:
+        resp = http_requests.get(
+            "https://api.coingecko.com/api/v3/simple/price",
+            params={"ids": ids, "vs_currencies": "usd", "include_24hr_change": "true"},
+            timeout=8,
+        )
+        resp.raise_for_status()
+        cg_data: dict = resp.json()
+    except Exception:
+        cg_data = {}
+
+    result: dict = {}
+    for ticker, cg_id in _COINGECKO_IDS.items():
+        entry = cg_data.get(cg_id, {})
+        price  = entry.get("usd")
+        change = entry.get("usd_24h_change")
+        mood   = _change_to_mood(change) if change is not None else "Unknown"
+        result[ticker] = {"price": price, "change_24h": change, "mood": mood}
+
+    for ticker, mood in _FIXED_MOODS.items():
+        result[ticker] = {"price": None, "change_24h": None, "mood": mood}
+
+    _price_cache = {"data": result, "ts": now}
+    return result
 
 
 # ── Health ─────────────────────────────────────────────────────────────────

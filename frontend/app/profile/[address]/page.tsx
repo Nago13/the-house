@@ -6,6 +6,7 @@ import Link from "next/link";
 import { getContestant } from "@/lib/contestants";
 import { isChatEnabled } from "@/lib/api";
 import TraitBar from "@/components/TraitBar";
+import { usePrices, formatPrice, formatChange } from "@/lib/prices";
 
 interface Props {
   params: Promise<{ address: string }>;
@@ -17,15 +18,25 @@ const BORDER = "rgba(139,92,246,0.2)";
 const BORDER_SOFT = "rgba(255,255,255,0.08)";
 
 const TICKER_COLORS: Record<string, string> = {
-  MOM:  "#F5C842",
-  DAD:  "#A855F7",
-  GNSP: "#F59E0B",
+  MOM:      "#F5C842",
+  DAD:      "#A855F7",
+  GNSP:     "#F59E0B",
+  SHIB:     "#FF6B2B",
+  DOGE:     "#C9A84C",
+  PEPE:     "#22c55e",
+  FLOKI:    "#60a5fa",
+  PENGU:    "#93c5fd",
+  FARTCOIN: "#84cc16",
+  PHNIX:    "#f97316",
 };
 
 export default function ProfilePage({ params }: Props) {
   const { address } = use(params);
   const c = getContestant(address);
   if (!c) notFound();
+
+  const prices = usePrices();
+  const pd = prices?.[c.ticker];
 
   const accentColor = TICKER_COLORS[c.ticker] ?? PURPLE_LIGHT;
   const chatEnabled = isChatEnabled(c.token_address);
@@ -58,7 +69,7 @@ export default function ProfilePage({ params }: Props) {
             />
           </div>
           <div className="flex flex-col justify-center pt-1">
-            <div className="flex items-center gap-3 mb-1">
+            <div className="flex items-center gap-2 flex-wrap mb-1">
               <span
                 className="text-[10px] tracking-[0.2em] uppercase font-mono font-bold"
                 style={{ color: accentColor }}
@@ -77,11 +88,29 @@ export default function ProfilePage({ params }: Props) {
                   GEN {c.generation}
                 </span>
               )}
+              {pd?.price != null && (
+                <span className="font-mono text-[11px]" style={{ color: "rgba(255,255,255,0.6)" }}>
+                  {formatPrice(pd.price)}
+                </span>
+              )}
+              {pd?.change_24h != null && (
+                <span
+                  className="font-mono text-[11px] font-semibold"
+                  style={{ color: pd.change_24h >= 0 ? "#34d399" : "#f87171" }}
+                >
+                  {formatChange(pd.change_24h)}
+                </span>
+              )}
             </div>
             <h1 className="text-3xl font-bold text-white tracking-tight mb-1">{c.name}</h1>
             <p className="font-mono text-xs" style={{ color: "rgba(255,255,255,0.35)" }}>
-              {c.genesis_archetype?.split("—")[0].trim()}
+              {c.genesis_archetype}
             </p>
+            {pd?.mood && (
+              <p className="font-mono text-xs mt-1" style={{ color: accentColor }}>
+                Mood: {pd.mood}
+              </p>
+            )}
             <p className="font-mono text-[10px] mt-2 truncate max-w-xs" style={{ color: "rgba(255,255,255,0.2)" }}>
               {c.token_address}
               {c.mock_deploy && (
