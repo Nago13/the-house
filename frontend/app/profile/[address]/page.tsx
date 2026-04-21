@@ -1,3 +1,5 @@
+"use client";
+import { use } from "react";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,8 +10,8 @@ interface Props {
   params: Promise<{ address: string }>;
 }
 
-export default async function ProfilePage({ params }: Props) {
-  const { address } = await params;
+export default function ProfilePage({ params }: Props) {
+  const { address } = use(params);
   const c = getContestant(address);
   if (!c) notFound();
 
