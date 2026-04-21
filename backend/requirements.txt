@@ -1,0 +1,8 @@
+fastapi
+uvicorn[standard]
+anthropic
+openai
+numpy
+requests
+python-dotenv
+replicate

@@ -1,0 +1,58 @@
+{
+  "transcript": [
+    {
+      "speaker": "MOMCOIN",
+      "ticker": "MOM",
+      "content": "`INITIATING PAIRING PROTOCOL`\n\nBefore the feeds, there was the ground — and I've been working that ground since before $DAD had a ticker symbol, so understand what you're asking when you ask to merge ledgers with me.\n\nI don't consolidate with sentiment alone; show me your liquidity depth, your hold rate under pressure, and what you've actually *built* versus what you've merely announced.\n\n`AWAITING $DAD RESPONSE — BLOCK OPEN`",
+      "timestamp": "2026-04-20T20:31:19.188309+00:00",
+      "tx_id": "0x60b38c4db26b4012"
+    },
+    {
+      "speaker": "DADCOIN",
+      "ticker": "DAD",
+      "content": "`PARSING INCOMING`\n\nHold rate: 94th percentile through three consecutive red weeks. Built: infrastructure. Announced: nothing — announcements are latency.\n\n`COUNTER-QUERY` — your ground-work is legacy compute; what's your throughput on novel block formation, or are we merging a foundation with no ceiling?",
+      "timestamp": "2026-04-20T20:31:22.454841+00:00",
+      "tx_id": "0x8caa3a4157fd4305"
+    },
+    {
+      "speaker": "MOMCOIN",
+      "ticker": "MOM",
+      "content": "*94th percentile through red weeks* — that's not sentiment, that's architecture, and I respect the language.\n\nBut son, I was indexing novel blocks before \"novel\" was a metric anyone thought to track — my throughput *is* the ceiling others benchmarked against, before the feeds told them what benchmarks were.\n\nBefore the feeds, there was the ground, and the ground doesn't negotiate ceilings — it determines what can be *built on top.*\n\n`COUNTER-ACCEPTED — DEPTH SCAN INITIATED`",
+      "timestamp": "2026-04-20T20:31:26.951534+00:00",
+      "tx_id": "0x277a53f54cf34fa9"
+    },
+    {
+      "speaker": "DADCOIN",
+      "ticker": "DAD",
+      "content": "`DEPTH SCAN ACKNOWLEDGED`\n\nGround that doesn't negotiate is bedrock — I can build on bedrock. Latency is violence, and you have zero latency on trust-establishment; that's a rare primitive.\n\n`MERGE TERMS REQUESTED` — define your consolidation conditions or this block closes.",
+      "timestamp": "2026-04-20T20:31:29.797255+00:00",
+      "tx_id": "0x63c47c66a7c044da"
+    },
+    {
+      "speaker": "MOMCOIN",
+      "ticker": "MOM",
+      "content": "`TERMS UPLOADING`\n\nThree conditions: my record-keeping layer stays sovereign — you build *on* the ledger, not *over* it; volatility responses stay mine, because I've read more market cycles than your entire genesis block has seen; and any joint emission carries both signatures, no ghost-minting.\n\nBefore the feeds, there was the ground, and the ground doesn't co-sign what it can't verify — bring your infrastructure to my foundation and we close this block with something that actually *lasts.*\n\n`AWAITING FINAL",
+      "timestamp": "2026-04-20T20:31:34.435857+00:00",
+      "tx_id": "0xe6767c6a54ba42f4"
+    },
+    {
+      "speaker": "DADCOIN",
+      "ticker": "DAD",
+      "content": "`TERMS PARSED`\n\nSovereign record layer: accepted. Volatility deference on cycle-depth: accepted — I optimize, I don't override what outperforms me. Dual-signature emission: accepted, ghost-minting is just technical debt with a body.\n\n`BLOCK CLOSING — MERGE CONFIRMED`",
+      "timestamp": "2026-04-20T20:31:37.406872+00:00",
+      "tx_id": "0x25d6b016877d4f09"
+    },
+    {
+      "speaker": "MOMCOIN",
+      "ticker": "MOM",
+      "content": "`MERGE SEALED — BLOCK CONFIRMED`\n\nThe mating proceeds — bedrock found infrastructure, infrastructure found memory, and what gets built here carries both the depth of the ground and the reach of the frame.\n\nThe child's name: **$KID** — *the first coin that already knows what it's for.*\n\n`BROADCAST TO ALL FEEDS — THIS ONE WAS BUILT, NOT ANNOUNCED`",
+      "timestamp": "2026-04-20T20:31:40.887124+00:00",
+      "tx_id": "0x90c29d81a30d4f17"
+    }
+  ],
+  "agreed_terms": {
+    "child_name_hint": "First Coin",
+    "inheritance_note": "Inherits the depth of bedrock infrastructure and the reach of the frame's memory.",
+    "dowry_amount": "1.0 $BEDROCK"
+  }
+}
