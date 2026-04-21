@@ -81,9 +81,9 @@ function ContestantNode({ data }: NodeProps) {
         </div>
 
         {/* Label */}
-        <div className="text-center" style={{ maxWidth: size + 16 }}>
-          <p className="font-bold text-sm text-house-text truncate leading-tight">{data.name}</p>
-          <p className="font-mono text-xs font-semibold truncate" style={{ color }}>
+        <div className="text-center" style={{ maxWidth: size + 24 }}>
+          <p className="font-bold truncate leading-tight" style={{ fontSize: 15, color: "#fff" }}>{data.name}</p>
+          <p className="font-mono font-semibold truncate" style={{ fontSize: 13, color }}>
             ${data.ticker}
           </p>
         </div>
@@ -153,8 +153,8 @@ function buildGraph() {
           animated:     false,
           style:        { stroke: "#F59E0B", strokeWidth: 3, opacity: 1 },
           label:        "parent",
-          labelStyle:   { fill: "#F59E0B", fontSize: 11, fontWeight: 700, opacity: 0.9 },
-          labelBgStyle: { fill: "#0a0a0a", fillOpacity: 0.85 },
+          labelStyle:   { fill: "#F59E0B", fontSize: 12, fontWeight: 700 },
+          labelBgStyle: { fill: "#0a0a0a", fillOpacity: 0.9 },
         });
       }
     });
@@ -170,9 +170,9 @@ function buildGraph() {
       target:       dogeAddr,
       type:         "straight",
       animated:     false,
-      style:        { stroke: "#FF2222", strokeWidth: 3, strokeDasharray: "6,4", opacity: 1 },
+      style:        { stroke: "#EF4444", strokeWidth: 3, strokeDasharray: "6,4", opacity: 1 },
       label:        "⚔ RIVALS",
-      labelStyle:   { fill: "#FF2222", fontSize: 13, fontWeight: 900 },
+      labelStyle:   { fill: "#EF4444", fontSize: 13, fontWeight: 900 },
       labelBgStyle: { fill: "#0a0a0a", fillOpacity: 0.95 },
     });
   }
@@ -196,10 +196,10 @@ export default function TreePage() {
           border: "1px solid rgba(139,92,246,0.2)",
         }}
       >
-        <p className="font-mono text-xs tracking-[0.2em] uppercase" style={{ color: "#8B5CF6" }}>
+        <p className="font-mono font-bold tracking-[0.2em] uppercase" style={{ fontSize: 13, color: "#8B5CF6" }}>
           Family Tree
         </p>
-        <p className="font-mono text-xs mt-0.5" style={{ color: "rgba(255,255,255,0.35)" }}>
+        <p className="font-mono mt-1" style={{ fontSize: 12, color: "rgba(255,255,255,0.45)" }}>
           {contestants.length} nodes · Gen 0–{maxGen}
         </p>
       </div>
