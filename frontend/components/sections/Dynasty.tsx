@@ -4,8 +4,8 @@ import { useRef } from "react"
 import { motion, useInView } from "motion/react"
 
 const NODES = [
-  { id: "MOM",  label: "MOMCOIN",       ticker: "$MOM",  color: "#F5C842", cx: 150, cy: 80,  r: 28, cap: "4.2M" },
-  { id: "DAD",  label: "DADCOIN",       ticker: "$DAD",  color: "#A855F7", cx: 450, cy: 80,  r: 28, cap: "3.8M" },
+  { id: "MOM",  label: "MOMCOIN",       ticker: "$MOM",  color: "#F5C842", cx: 150, cy: 80,  r: 28, cap: "sim." },
+  { id: "DAD",  label: "DADCOIN",       ticker: "$DAD",  color: "#A855F7", cx: 450, cy: 80,  r: 28, cap: "sim." },
   { id: "GNSP", label: "GENESIS PRIME", ticker: "$GNSP", color: "#F59E0B", cx: 300, cy: 280, r: 22, cap: "—" },
 ]
 

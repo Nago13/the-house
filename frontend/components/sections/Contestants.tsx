@@ -19,7 +19,7 @@ const TOKEN_MOODS: Record<string, string> = {
   GNSP: "Emergent",
 }
 
-const TOKEN_PRICE: Record<string, string> = {
+const MOOD_DELTA: Record<string, string> = {
   MOM:  "+12.4%",
   DAD:  "+8.1%",
   GNSP: "+41.7%",
@@ -119,7 +119,7 @@ function ContestantCard({
                   GEN 1
                 </span>
               )}
-              <span className="text-[10px] text-emerald-400">{TOKEN_PRICE[c.ticker] ?? ""}</span>
+              <span className="text-[10px] text-[#F59E0B]">{MOOD_DELTA[c.ticker] ? `Mood ${MOOD_DELTA[c.ticker]}` : ""}</span>
             </div>
             <h3
               className={`font-display text-text-primary tracking-tight ${isChild ? "text-2xl" : "text-3xl"}`}

@@ -15,7 +15,7 @@ export const CHARACTERS = [
     ticker: "$MOM",
     role: "The Matriarch",
     color: "#F5C842",
-    priceChange: "+12.4%",
+    moodDelta: "+12.4%",
     mood: "Dominant",
     traits: [
       { name: "MEMORY",    value: 94 },
@@ -32,7 +32,7 @@ export const CHARACTERS = [
     ticker: "$DAD",
     role: "The Patriarch",
     color: "#A855F7",
-    priceChange: "+8.1%",
+    moodDelta: "+8.1%",
     mood: "Assertive",
     traits: [
       { name: "LOGIC",      value: 91 },
@@ -49,7 +49,7 @@ export const CHARACTERS = [
     ticker: "$BABY",
     role: "The Offspring",
     color: "#F59E0B",
-    priceChange: "+41.7%",
+    moodDelta: "+41.7%",
     mood: "Curious",
     traits: [
       { name: "MEMORY",    value: 78 },
@@ -85,7 +85,7 @@ export const MATING_STEPS = [
   {
     number: "04",
     title: "Inheritance",
-    body: "Every holder of both parent tokens receives an airdrop of the child. No action required. Dynasties compound automatically.",
+    body: "Every holder of both parent tokens is eligible for a child token airdrop in Season 2. Dynasties compound automatically.",
     accent: "#F59E0B",
   },
 ]
