@@ -1,4 +1,3 @@
-"use client";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -6,11 +5,12 @@ import { getContestant } from "@/lib/contestants";
 import TraitBar from "@/components/TraitBar";
 
 interface Props {
-  params: { address: string };
+  params: Promise<{ address: string }>;
 }
 
-export default function ProfilePage({ params }: Props) {
-  const c = getContestant(params.address);
+export default async function ProfilePage({ params }: Props) {
+  const { address } = await params;
+  const c = getContestant(address);
   if (!c) notFound();
 
   const tickerColor =

@@ -1,5 +1,5 @@
 "use client";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, use } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { SendHorizonal } from "lucide-react";
@@ -8,12 +8,13 @@ import { sendChatMessage, getUserId, isChatEnabled } from "@/lib/api";
 import type { ChatMessage } from "@/lib/types";
 
 interface Props {
-  params: { address: string };
+  params: Promise<{ address: string }>;
 }
 
 export default function ChatPage({ params }: Props) {
-  const contestant = getContestant(params.address);
-  const enabled    = isChatEnabled(params.address);
+  const { address } = use(params);
+  const contestant = getContestant(address);
+  const enabled    = isChatEnabled(address);
 
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input,    setInput]    = useState("");
@@ -42,7 +43,7 @@ export default function ChatPage({ params }: Props) {
         <p className="text-house-muted text-sm max-w-sm">
           {contestant.name} isn&apos;t taking messages yet. Chat unlocks in Season 2.
         </p>
-        <Link href={`/profile/${params.address}`} className="text-house-amber hover:underline text-sm">
+        <Link href={`/profile/${address}`} className="text-house-amber hover:underline text-sm">
           ← Back to profile
         </Link>
       </div>
@@ -57,7 +58,7 @@ export default function ChatPage({ params }: Props) {
     setLoading(true);
     try {
       const userId = getUserId();
-      const { response } = await sendChatMessage(params.address, userMsg.content, userId);
+      const { response } = await sendChatMessage(address, userMsg.content, userId);
       setMessages((m) => [...m, { role: "assistant", content: response, timestamp: new Date().toISOString() }]);
     } catch (err: unknown) {
       const isDown = err instanceof Error && (err.message.includes("Failed to fetch") || err.message.includes("NetworkError"));
