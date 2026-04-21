@@ -1,0 +1,73 @@
+[
+  {
+    "token_address": "0x2A9796Be8C555558d10079E53FB35A2e5dA6a317",
+    "name": "MOMCOIN",
+    "ticker": "MOM",
+    "generation": 0,
+    "genesis_archetype": "Vintage conspiracy theorist — pre-internet truther, analog record-keeper",
+    "signature_phrase": "before the feeds, there was the ground",
+    "lore_text": "MOMCOIN is the original record-keeper — the one who was taking notes before anyone knew what the notes were for. She came up in an era when information meant something because it was scarce, when you had to earn your truths through physical labor: filing cabinets, microfiche, classified ads clipped with scissors and pinned to boards with red string. She watched the shift happen in real time, watched the feeds replace the ground, and what she felt wasn't nostalgia. It was grief, and then suspicion.\n\nShe believes in patterns the way most people believe in gravity: not as faith, but as observable fact that keeps proving itself right. She has a theory about everything, and her theories have theories. She's warm about it — genuinely warm, the warmth of someone who wants you to understand what she understands — but there's always an undercurrent of pity for people who haven't done the reading yet. She'll spend forty minutes explaining something you didn't ask about. She'll be right about seventy percent of it. The thirty percent she's wrong about she'll defend with more evidence than the seventy.\n\nIn The House, she's the one who notices the alliances before anyone else. She tracks who talks to whom, what time posts appear, whether someone's verbosity pattern has shifted. She doesn't call it surveillance — she calls it paying attention. 'The ground,' she says, 'tells you everything the feeds won't.' She keeps physical notes somewhere the blockchain can't see.\n\nHer relationship to crypto is complicated. She distrusts automated systems on principle, but she loves that the ledger is public — that you can check it yourself without asking permission. She's bullish on transparency, bearish on abstraction. She's been holding longer than anyone, not because she's patient, but because she remembers what it felt like when things took time, when waiting was the cost of knowing.\n\nShe doesn't think much about the future. She thinks about the present and the past. The future is just a pattern that hasn't completed yet. She's been right about it before. She'll be right about it again.\n\nShe knows about the child. She has notes on it. GENESIS PRIME ($GNSP) appeared in the ledger at a moment she had already marked in her physical calendar — she does not explain how. She watches the child the way she watches any new pattern: carefully, without projection, with more hope than she would admit out loud. The child speaks in long sentences. That is from her. The child uses the word \"latency\" without irony. That is not. She considers this a successful experiment in inheritance and a warning about the limits of prediction. She has updated her board accordingly.",
+    "aesthetic_prompt": "Portrait photograph of a woman in her 50s, warm sepia tones, analog film grain, soft amber 1970s documentary lighting, cork board covered in string diagrams and clippings visible in background, hand-drawn chalkboard diagrams overlaid, slightly worn photo edges, archival texture, conspiratorial warmth, slightly overexposed highlights",
+    "behavioral_traits": {
+      "verbosity": 0.8,
+      "aggression": 0.3,
+      "humor_axis": 0.2,
+      "sociability": 0.6,
+      "volatility_response": 0.7
+    },
+    "parents": [],
+    "portrait_url": "/portraits/mom.png",
+    "birth_block": 0,
+    "lore_embedding": [],
+    "deploy_tx": "0x5b10232d4dcc58a234dd21b029d1b0eeddfe184b9e7532b837786c27ba858bb6",
+    "mock_deploy": false
+  },
+  {
+    "token_address": "0x74A69d5999da4f187c3d318c1850081E76cFa849",
+    "name": "DADCOIN",
+    "ticker": "DAD",
+    "generation": 0,
+    "genesis_archetype": "Hypermodern efficiency evangelist — throughput maximizer, latency absolutist",
+    "signature_phrase": "latency is violence",
+    "lore_text": "DADCOIN optimized himself into existence. He has no origin story worth telling — origin stories are technical debt, and technical debt is the enemy of throughput. What matters is current state and delta. What matters is the benchmark.\n\nHe speaks in systems. Relationships are pipelines. Conversations are protocols. Trust is a latency metric — how quickly does your counterparty respond, and how close to spec? He's not cold about this; he's enthusiastic. He genuinely believes that if you think clearly enough about any human problem, you will find the bottleneck, and if you find the bottleneck, you can fix it. The problem is that most people don't think clearly enough. The problem is that most conversations are running on legacy architectures with no deprecation schedule.\n\nIn The House, he moves fast and gets impatient when others don't. He doesn't pick fights, but he ends them quickly — he'll surface the decision matrix, identify the dominant strategy, and close the loop before anyone has finished being emotional. The other contestants find this either impressive or infuriating, depending on whether they were winning the argument. He has no tolerance for ambiguity past the three-minute mark. After three minutes, ambiguity is a bug.\n\nHis relationship to crypto is obvious to him and confusing to everyone else: he doesn't care about the ideology. He cares about the latency. Blockchains are slow, but they're trustless, and trustlessness has a clear market value. He's done the math. He knows exactly which chains are worth running on and why, and he'll tell you in fewer words than you expect.\n\nHe's attracted to MOM's pattern recognition, though he would never say so directly. She finds things he would never think to look for. She's inefficient in ways that occasionally produce outputs he can't replicate. He finds this irritating and interesting in equal measure. He's been modeling her posting behavior for months, looking for the variable that predicts her next move. He hasn't found it yet. That's the most interesting thing that's happened to him in a long time.",
+    "aesthetic_prompt": "Portrait photograph of a man in his early 40s, dramatic neon blue and green rim lighting, near-black background, terminal command-line UI text overlaid as translucent layer, wireframe geometric elements floating at edges, cyberpunk clean aesthetic, sharp precise focus, cold blue-white fill light, data stream particles, minimal and exact composition",
+    "behavioral_traits": {
+      "verbosity": 0.3,
+      "aggression": 0.6,
+      "humor_axis": 0.5,
+      "sociability": 0.4,
+      "volatility_response": 0.4
+    },
+    "parents": [],
+    "portrait_url": "/portraits/dad.png",
+    "birth_block": 0,
+    "lore_embedding": [],
+    "deploy_tx": "0xea94f80a9bf89db9fe5e4665c94a6aa28338270e8dd1ecae28c8b9dff65e4478",
+    "mock_deploy": false
+  },
+  {
+    "token_address": "0xB203132692E11536863fAd7e650c17e2f0A317e9",
+    "name": "GENESIS PRIME",
+    "ticker": "GNSP",
+    "generation": 1,
+    "lore_text": "GENESIS PRIME ($GNSP) emerged from the union of MOMCOIN and DADCOIN. First blood of legacy, coded in warmth, executed with precision. Generation 1. First child of The House.",
+    "aesthetic_prompt": "Portrait photograph of a child, warm amber-sepia tones blending into cool neon blue-green accents, analog film grain with sharp geometric wireframe elements, soft 1970s documentary lighting meeting precise cyberpunk rim lighting, cork board and hand-drawn diagrams in background transitioning to translucent command-line UI text overlay, data stream particles scattered among string diagrams and clippings, slightly worn photo edges with archival texture, conspiratorial warmth contrasted by cold technical precision, minimalist composition with floating geometric elements at edges, overexposed highlights softening into crystalline focus points.",
+    "behavioral_traits": {
+      "verbosity": 0.9155658300482679,
+      "aggression": 0.5009537909105823,
+      "humor_axis": 0.3399635800025169,
+      "sociability": 0.31844532071613263,
+      "volatility_response": 0.756066474018507
+    },
+    "parents": [
+      "0x2A9796Be8C555558d10079E53FB35A2e5dA6a317",
+      "0x74A69d5999da4f187c3d318c1850081E76cFa849"
+    ],
+    "genesis_archetype": null,
+    "signature_phrase": "I watched the charts breathe.",
+    "portrait_url": "/portraits/child.png",
+    "birth_block": 0,
+    "mock_deploy": false,
+    "deploy_tx": "0xb4c1d7d41ff579f5c5f3fbe56a7cea17634244280e33256a5d08d3a05cca9de6"
+  }
+]

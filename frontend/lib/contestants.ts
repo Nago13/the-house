@@ -4,7 +4,7 @@
  * During wiring phase (Hours 13-16), swap to a fetch from /api/contestant/[address].
  */
 import type { Contestant } from "./types";
-import rawData from "../../content/contestants.json";
+import rawData from "../public/data/contestants.json";
 
 const contestants: Contestant[] = (rawData as Contestant[]).filter(
   (c) => c.token_address !== "DEPLOY_PENDING"
