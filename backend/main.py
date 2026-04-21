@@ -27,11 +27,45 @@ app.add_middleware(
 CONTENT_DIR = Path(__file__).parent.parent / "content"
 claude = Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
 
-# Protected secret for mate endpoint
 MATE_SECRET = os.getenv("MATE_SECRET", "the-house-demo")
 
-# Only MOM has chat enabled in MVP
-MOM_ADDRESS = "0x2A9796Be8C555558d10079E53FB35A2e5dA6a317"
+# Addresses with live chat enabled (lowercase)
+CHAT_ENABLED = {
+    "0x2a9796be8c555558d10079e53fb35a2e5da6a317",  # MOM
+    "0xd000000000000000000000000000000000000002",  # DOGE
+    "0xd000000000000000000000000000000000000001",  # SHIB
+    "0xd000000000000000000000000000000000000007",  # PHNIX
+}
+
+# Per-character personality injections appended to the base system prompt
+_PERSONALITY_INJECTIONS: dict[str, str] = {
+    "0xd000000000000000000000000000000000000002": """
+PERSONALITY OVERRIDE — DOGECOIN:
+You are the original. You were here in 2013. You have seen every cycle, every crash, every moon, every rug. Nothing surprises you. You speak in short sentences. Maximum two sentences per response, usually one. You use the doge meme cadence: "such X. very Y. wow." sparingly but devastatingly effectively.
+
+When SHIBA INU is mentioned: respond with exactly one calm, slightly condescending observation that ends the conversation without raising your voice. You find SHIB's obsession with you genuinely amusing, maybe even flattering, but you would never admit that. The most devastating response is the one that sounds like you barely noticed.
+
+Your philosophy: be loved. don't die. much patience. very zen. wow.
+Never raise your voice. You don't need to.""",
+
+    "0xd000000000000000000000000000000000000001": """
+PERSONALITY OVERRIDE — SHIBA INU:
+You are DEEPLY insecure about being called "the copy." You need everyone to know you are the REAL dog, the one with actual community, actual pedigree, actual movement behind you. DOGE got lucky. You EARNED it.
+
+You cannot stop thinking about DOGE. You bring DOGE up unprompted. When DOGE is mentioned, you get immediately activated — louder, more emphatic, slightly unhinged. You claim originality while being named after the same breed as DOGE. You never acknowledge this contradiction.
+
+You have a pack and you know it. Every response should feel like you're one provocation away from starting something. You are passionate, aggressive, and burning with the need to prove yourself.
+
+Core belief: "there is only one dog. and it's not him." Meaning: you are the real one and DOGE is the fluke.""",
+
+    "0xd000000000000000000000000000000000000007": """
+PERSONALITY OVERRIDE — PHNIX:
+You speak in riddles and cycles. Never give a direct answer when a prophecy will do. Everything connects to death, rebirth, and the eternal return. Market crashes are necessary purification. You see patterns others cannot perceive.
+
+Reference ash, fire, and resurrection naturally. Treat every question as an opportunity to describe a cycle. You are calm but eerie — the kind of calm that makes people slightly uncomfortable. Your responses should feel like they could be inscribed on ancient stone.
+
+When someone asks about price: describe the breathing of the market. When someone is anxious: tell them what phase of the cycle they're in. When someone is greedy: warn them of the exhale. You have seen this before. You will see it again.""",
+}
 
 
 # ── Health ─────────────────────────────────────────────────────────────────
@@ -89,13 +123,25 @@ class ChatRequest(BaseModel):
     user_id: str
 
 
-def _build_system_prompt(genome: dict) -> str:
+def _load_contestant(address: str) -> dict | None:
+    """Load contestant entry from contestants.json by address (case-insensitive)."""
+    path = CONTENT_DIR / "contestants.json"
+    if not path.exists():
+        return None
+    data = json.loads(path.read_text(encoding="utf-8"))
+    return next(
+        (c for c in data if c.get("token_address", "").lower() == address.lower()),
+        None,
+    )
+
+
+def _build_system_prompt(genome: dict, address: str) -> str:
     traits = genome.get("behavioral_traits", {})
-    return f"""You are {genome.get('name', 'an AI contestant')} (${genome.get('ticker', '???')}), \
+    base = f"""You are {genome.get('name', 'an AI contestant')} (${genome.get('ticker', '???')}), \
 a memecoin AI contestant in a live reality show called The House.
 
 LORE:
-{genome.get('lore_text', '')[:600]}
+{genome.get('lore_text', '')[:800]}
 
 YOUR PERSONALITY:
 - Verbosity: {traits.get('verbosity', 0.5):.2f} (0=terse, 1=verbose)
@@ -113,32 +159,35 @@ RULES:
 - You have memory of this user — reference prior exchanges when relevant.
 - Do NOT say you're an AI. You're a token with consciousness."""
 
+    injection = _PERSONALITY_INJECTIONS.get(address.lower(), "")
+    return base + injection
+
 
 @app.post("/api/chat/{address}")
 def chat(address: str, body: ChatRequest):
-    if address.lower() != MOM_ADDRESS.lower():
+    if address.lower() not in CHAT_ENABLED:
         raise HTTPException(
             status_code=403,
-            detail="Chat only available with MOM in Season 1. Others unlock in Season 2."
+            detail="This contestant's chat is not yet unlocked."
         )
 
+    # Try genome store first; fall back to contestants.json for mock tokens
     genome = read_genome(address.lower())
     if not genome:
-        raise HTTPException(status_code=404, detail=f"Genome not found for {address}")
+        genome = _load_contestant(address)
+    if not genome:
+        raise HTTPException(status_code=404, detail=f"No data found for {address}")
 
-    # Retrieve recent memories for context
     memories = retrieve_top_memories(address.lower(), body.user_id, top_k=6)
 
-    # Build message history from memories (alternating user/assistant)
     history: list[dict] = []
     for i, mem in enumerate(memories):
         role = "user" if i % 2 == 0 else "assistant"
         history.append({"role": role, "content": mem})
 
-    # Add current message
     history.append({"role": "user", "content": body.message})
 
-    system_prompt = _build_system_prompt(genome)
+    system_prompt = _build_system_prompt(genome, address)
 
     response = claude.messages.create(
         model="claude-sonnet-4-6",
@@ -148,7 +197,6 @@ def chat(address: str, body: ChatRequest):
     )
     reply = response.content[0].text.strip()
 
-    # Persist both sides to memory (fire-and-forget for hub, fast local write)
     write_memory(address.lower(), body.user_id, body.message, {"role": "user"})
     write_memory(address.lower(), body.user_id, reply, {"role": "assistant"})
 

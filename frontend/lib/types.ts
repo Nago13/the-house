@@ -21,6 +21,7 @@ export interface Contestant {
   birth_block: number;
   mock_deploy?: boolean;
   deploy_tx?: string | null;
+  chat_enabled?: boolean;
 }
 
 export interface FeedPost {

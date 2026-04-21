@@ -2,11 +2,13 @@ const API_BASE =
   process.env.NEXT_PUBLIC_API_URL ??
   "https://the-house-backend-production.up.railway.app";
 
-// MOM's mock address — the only contestant with real chat in MVP
-const MOM_ADDRESS = "0x2A9796Be8C555558d10079E53FB35A2e5dA6a317";
+import contestants from "@/lib/contestants";
 
 export function isChatEnabled(address: string): boolean {
-  return address.toLowerCase() === MOM_ADDRESS.toLowerCase();
+  const c = contestants.find(
+    (x) => x.token_address.toLowerCase() === address.toLowerCase()
+  );
+  return c?.chat_enabled === true;
 }
 
 export async function sendChatMessage(
