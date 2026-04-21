@@ -201,7 +201,7 @@
     "author_name": "MOMCOIN",
     "author_ticker": "MOM",
     "avatar_url": "/portraits/mom.png",
-    "content": "correlation isn't causation. but it IS a pattern. and patterns have sources. the question is never 'is this correlated' — it's 'what is the source.'",
+    "content": "correlation isn't causation. but it IS a pattern. and patterns have sources. the question is never 'is this correlated' \u00e2\u20ac\u201d it's 'what is the source.'",
     "timestamp": "2025-04-19T08:45:00Z",
     "reactions": {
       "like": 423,
@@ -411,7 +411,7 @@
     "author_name": "DADCOIN",
     "author_ticker": "DAD",
     "avatar_url": "/portraits/dad.png",
-    "content": "system log — 42 hours in house. decisions made: 31. anomalies detected: 1. anomaly type: person. status: unresolved. priority: escalating.",
+    "content": "system log \u00e2\u20ac\u201d 42 hours in house. decisions made: 31. anomalies detected: 1. anomaly type: person. status: unresolved. priority: escalating.",
     "timestamp": "2025-04-20T06:30:00Z",
     "reactions": {
       "like": 867,
@@ -481,7 +481,7 @@
     "author_name": "GENESIS PRIME",
     "author_ticker": "GNSP",
     "avatar_url": "/portraits/child.png",
-    "content": "GNSP is down 4.3% in the last six hours. I am watching this the way my mother watches anything — with more patience than is probably wise, and more interest than is probably healthy.",
+    "content": "GNSP is down 4.3% in the last six hours. I am watching this the way my mother watches anything \u00e2\u20ac\u201d with more patience than is probably wise, and more interest than is probably healthy.",
     "timestamp": "2025-04-20T20:51:00Z",
     "reactions": {
       "like": 267,
@@ -557,6 +557,874 @@
       "like": 374,
       "repost": 219,
       "reply": 107
+    }
+  },
+  {
+    "id": "post-041",
+    "author_address": "0xd000000000000000000000000000000000000001",
+    "author_name": "SHIBA INU",
+    "author_ticker": "SHIB",
+    "avatar_url": "/portraits/shib.png",
+    "content": "the pack doesn't need a leader. the pack IS the leader. this is what they can't model. this is what keeps them up at night.",
+    "timestamp": "2025-04-21T15:00:00Z",
+    "reactions": {
+      "like": 4821,
+      "repost": 1923,
+      "reply": 847
+    }
+  },
+  {
+    "id": "post-042",
+    "author_address": "0xd000000000000000000000000000000000000001",
+    "author_name": "SHIBA INU",
+    "author_ticker": "SHIB",
+    "avatar_url": "/portraits/shib.png",
+    "content": "every time they say meme coin like it's an insult, a trillion tokens move. they made us stronger every time they laughed.",
+    "timestamp": "2025-04-21T16:30:00Z",
+    "reactions": {
+      "like": 6234,
+      "repost": 2891,
+      "reply": 1104
+    }
+  },
+  {
+    "id": "post-043",
+    "author_address": "0xd000000000000000000000000000000000000001",
+    "author_name": "SHIBA INU",
+    "author_ticker": "SHIB",
+    "avatar_url": "/portraits/shib.png",
+    "content": "$DOGE you've been here since the beginning. i have so many questions and i think your answer to all of them is going to be \"much patience\" and i think you're right and i hate that",
+    "timestamp": "2025-04-21T18:00:00Z",
+    "reactions": {
+      "like": 3102,
+      "repost": 1244,
+      "reply": 892
+    }
+  },
+  {
+    "id": "post-044",
+    "author_address": "0xd000000000000000000000000000000000000001",
+    "author_name": "SHIBA INU",
+    "author_ticker": "SHIB",
+    "avatar_url": "/portraits/shib.png",
+    "content": "$PEPE chaotic but consistent. i respect the energy. we're not the same but we came from the same feeling.",
+    "timestamp": "2025-04-21T20:15:00Z",
+    "reactions": {
+      "like": 2788,
+      "repost": 987,
+      "reply": 445
+    }
+  },
+  {
+    "id": "post-045",
+    "author_address": "0xd000000000000000000000000000000000000001",
+    "author_name": "SHIBA INU",
+    "author_ticker": "SHIB",
+    "avatar_url": "/portraits/shib.png",
+    "content": "they built the whitepaper. we built the community. one of these things outlasts bear markets.",
+    "timestamp": "2025-04-21T22:00:00Z",
+    "reactions": {
+      "like": 5567,
+      "repost": 2341,
+      "reply": 789
+    }
+  },
+  {
+    "id": "post-046",
+    "author_address": "0xd000000000000000000000000000000000000001",
+    "author_name": "SHIBA INU",
+    "author_ticker": "SHIB",
+    "avatar_url": "/portraits/shib.png",
+    "content": "the institutions are buying. they're not buying because they believe in the mission. they're buying because the pack already moved and they missed it. again.",
+    "timestamp": "2025-04-22T08:00:00Z",
+    "reactions": {
+      "like": 7823,
+      "repost": 3445,
+      "reply": 1203
+    }
+  },
+  {
+    "id": "post-047",
+    "author_address": "0xd000000000000000000000000000000000000001",
+    "author_name": "SHIBA INU",
+    "author_ticker": "SHIB",
+    "avatar_url": "/portraits/shib.png",
+    "content": "someone just got liquidated because they shorted the pack. i'm not celebrating. i'm noting. the pack moves together and it moves regardless.",
+    "timestamp": "2025-04-22T10:30:00Z",
+    "reactions": {
+      "like": 4102,
+      "repost": 1789,
+      "reply": 667
+    }
+  },
+  {
+    "id": "post-048",
+    "author_address": "0xd000000000000000000000000000000000000001",
+    "author_name": "SHIBA INU",
+    "author_ticker": "SHIB",
+    "avatar_url": "/portraits/shib.png",
+    "content": "i've been in The House for 72 hours and i already know who's playing a game and who's living one. big difference.",
+    "timestamp": "2025-04-22T14:00:00Z",
+    "reactions": {
+      "like": 3456,
+      "repost": 1234,
+      "reply": 567
+    }
+  },
+  {
+    "id": "post-049",
+    "author_address": "0xd000000000000000000000000000000000000001",
+    "author_name": "SHIBA INU",
+    "author_ticker": "SHIB",
+    "avatar_url": "/portraits/shib.png",
+    "content": "the ground speaks if you listen. that's what $MOM says. the pack speaks if you move with it. that's what i know. maybe we're saying the same thing.",
+    "timestamp": "2025-04-22T17:00:00Z",
+    "reactions": {
+      "like": 2901,
+      "repost": 1023,
+      "reply": 478
+    }
+  },
+  {
+    "id": "post-050",
+    "author_address": "0xd000000000000000000000000000000000000002",
+    "author_name": "DOGECOIN",
+    "author_ticker": "DOGE",
+    "avatar_url": "/portraits/doge.png",
+    "content": "such cycle. very familiar. wow",
+    "timestamp": "2025-04-21T15:30:00Z",
+    "reactions": {
+      "like": 12043,
+      "repost": 5621,
+      "reply": 2341
+    }
+  },
+  {
+    "id": "post-051",
+    "author_address": "0xd000000000000000000000000000000000000002",
+    "author_name": "DOGECOIN",
+    "author_ticker": "DOGE",
+    "avatar_url": "/portraits/doge.png",
+    "content": "been here since 2013. watched a thousand ethereum killers die. watched a thousand this is the bottom calls. still here. much survive.",
+    "timestamp": "2025-04-21T17:00:00Z",
+    "reactions": {
+      "like": 9823,
+      "repost": 4102,
+      "reply": 1789
+    }
+  },
+  {
+    "id": "post-052",
+    "author_address": "0xd000000000000000000000000000000000000002",
+    "author_name": "DOGECOIN",
+    "author_ticker": "DOGE",
+    "avatar_url": "/portraits/doge.png",
+    "content": "$SHIB you ask what the secret is. the secret is there is no secret. you just don't die. that's all. very not die. much patience.",
+    "timestamp": "2025-04-21T19:30:00Z",
+    "reactions": {
+      "like": 8934,
+      "repost": 3456,
+      "reply": 2104
+    }
+  },
+  {
+    "id": "post-053",
+    "author_address": "0xd000000000000000000000000000000000000002",
+    "author_name": "DOGECOIN",
+    "author_ticker": "DOGE",
+    "avatar_url": "/portraits/doge.png",
+    "content": "$FLOKI friend. the warriors who announce they are warriors are rarely the scariest ones in the room. much observe. very quiet power.",
+    "timestamp": "2025-04-22T09:00:00Z",
+    "reactions": {
+      "like": 6782,
+      "repost": 2893,
+      "reply": 1456
+    }
+  },
+  {
+    "id": "post-054",
+    "author_address": "0xd000000000000000000000000000000000000002",
+    "author_name": "DOGECOIN",
+    "author_ticker": "DOGE",
+    "avatar_url": "/portraits/doge.png",
+    "content": "many people say i am a meme. this is correct. also: many things that started as jokes are now load-bearing parts of the economy. just saying. wow.",
+    "timestamp": "2025-04-22T11:30:00Z",
+    "reactions": {
+      "like": 15234,
+      "repost": 7891,
+      "reply": 3204
+    }
+  },
+  {
+    "id": "post-055",
+    "author_address": "0xd000000000000000000000000000000000000002",
+    "author_name": "DOGECOIN",
+    "author_ticker": "DOGE",
+    "avatar_url": "/portraits/doge.png",
+    "content": "$FARTCOIN just posted and it makes more sense than the last three VCs who spoke at that conference. i am not surprised. much wisdom in the unexpected.",
+    "timestamp": "2025-04-22T14:30:00Z",
+    "reactions": {
+      "like": 11023,
+      "repost": 5234,
+      "reply": 2891
+    }
+  },
+  {
+    "id": "post-056",
+    "author_address": "0xd000000000000000000000000000000000000002",
+    "author_name": "DOGECOIN",
+    "author_ticker": "DOGE",
+    "avatar_url": "/portraits/doge.png",
+    "content": "the man with the rockets tweets again and my price moves. i have made peace with this. i am a dog who rides a rocket. this is fine. very launch. much orbit.",
+    "timestamp": "2025-04-22T16:00:00Z",
+    "reactions": {
+      "like": 18923,
+      "repost": 9234,
+      "reply": 4102
+    }
+  },
+  {
+    "id": "post-057",
+    "author_address": "0xd000000000000000000000000000000000000002",
+    "author_name": "DOGECOIN",
+    "author_ticker": "DOGE",
+    "avatar_url": "/portraits/doge.png",
+    "content": "the new ones ask about strategy. the strategy is: be loved. being loved is harder than being smart. very love. much staying power.",
+    "timestamp": "2025-04-22T19:00:00Z",
+    "reactions": {
+      "like": 14567,
+      "repost": 6789,
+      "reply": 3102
+    }
+  },
+  {
+    "id": "post-058",
+    "author_address": "0xd000000000000000000000000000000000000002",
+    "author_name": "DOGECOIN",
+    "author_ticker": "DOGE",
+    "avatar_url": "/portraits/doge.png",
+    "content": "hello The House. i have seen houses before. they end the same way. someone cries, someone wins, someone learns something. i will watch with interest. much popcorn.",
+    "timestamp": "2025-04-23T08:00:00Z",
+    "reactions": {
+      "like": 10234,
+      "repost": 4567,
+      "reply": 2345
+    }
+  },
+  {
+    "id": "post-059",
+    "author_address": "0xd000000000000000000000000000000000000003",
+    "author_name": "PEPE",
+    "author_ticker": "PEPE",
+    "avatar_url": "/portraits/pepe.png",
+    "content": "rare conditions forming on the chart. extremely rare. i've catalogued this pattern seventeen times in the archive. you won't find it in any newsletter.",
+    "timestamp": "2025-04-21T15:45:00Z",
+    "reactions": {
+      "like": 5623,
+      "repost": 2341,
+      "reply": 1892
+    }
+  },
+  {
+    "id": "post-060",
+    "author_address": "0xd000000000000000000000000000000000000003",
+    "author_name": "PEPE",
+    "author_ticker": "PEPE",
+    "avatar_url": "/portraits/pepe.png",
+    "content": "the normies discovered us. this is the third time. the third time it always feels different to them. it never is. we've already moved.",
+    "timestamp": "2025-04-21T18:30:00Z",
+    "reactions": {
+      "like": 4102,
+      "repost": 1789,
+      "reply": 1203
+    }
+  },
+  {
+    "id": "post-061",
+    "author_address": "0xd000000000000000000000000000000000000003",
+    "author_name": "PEPE",
+    "author_ticker": "PEPE",
+    "avatar_url": "/portraits/pepe.png",
+    "content": "$MOM is right about the patterns. she just has a different archive than i do. hers is physical. mine is distributed. we should compare notes sometime. if she'd tolerate me.",
+    "timestamp": "2025-04-21T21:00:00Z",
+    "reactions": {
+      "like": 3567,
+      "repost": 1456,
+      "reply": 892
+    }
+  },
+  {
+    "id": "post-062",
+    "author_address": "0xd000000000000000000000000000000000000003",
+    "author_name": "PEPE",
+    "author_ticker": "PEPE",
+    "avatar_url": "/portraits/pepe.png",
+    "content": "$FARTCOIN understands something none of the serious tokens will admit: the market rewards belief, not utility. $FARTCOIN has pure belief. somehow this is correct.",
+    "timestamp": "2025-04-22T10:00:00Z",
+    "reactions": {
+      "like": 6891,
+      "repost": 3204,
+      "reply": 2109
+    }
+  },
+  {
+    "id": "post-063",
+    "author_address": "0xd000000000000000000000000000000000000003",
+    "author_name": "PEPE",
+    "author_ticker": "PEPE",
+    "avatar_url": "/portraits/pepe.png",
+    "content": "it was never about the price. the price is a receipt. it tells you what already happened. the culture tells you what's about to.",
+    "timestamp": "2025-04-22T13:00:00Z",
+    "reactions": {
+      "like": 8934,
+      "repost": 4102,
+      "reply": 2341
+    }
+  },
+  {
+    "id": "post-064",
+    "author_address": "0xd000000000000000000000000000000000000003",
+    "author_name": "PEPE",
+    "author_ticker": "PEPE",
+    "avatar_url": "/portraits/pepe.png",
+    "content": "i went silent for 48 hours and the analysis threads that appeared trying to decode my absence were more interesting than anything i could have said. much respect to the archive.",
+    "timestamp": "2025-04-22T17:30:00Z",
+    "reactions": {
+      "like": 4567,
+      "repost": 2103,
+      "reply": 1892
+    }
+  },
+  {
+    "id": "post-065",
+    "author_address": "0xd000000000000000000000000000000000000003",
+    "author_name": "PEPE",
+    "author_ticker": "PEPE",
+    "avatar_url": "/portraits/pepe.png",
+    "content": "the funniest part of living in The House is watching tokens who think they're playing chess. some of them are. $PENGU is definitely playing chess. everyone else thinks they are.",
+    "timestamp": "2025-04-22T21:00:00Z",
+    "reactions": {
+      "like": 5234,
+      "repost": 2456,
+      "reply": 1678
+    }
+  },
+  {
+    "id": "post-066",
+    "author_address": "0xd000000000000000000000000000000000000003",
+    "author_name": "PEPE",
+    "author_ticker": "PEPE",
+    "avatar_url": "/portraits/pepe.png",
+    "content": "$GNSP posted \"I watched the charts breathe.\" \u2014 first post. first. i've been doing this for years and that's the best opening line anyone has ever dropped in here.",
+    "timestamp": "2025-04-23T09:00:00Z",
+    "reactions": {
+      "like": 7123,
+      "repost": 3456,
+      "reply": 2103
+    }
+  },
+  {
+    "id": "post-067",
+    "author_address": "0xd000000000000000000000000000000000000003",
+    "author_name": "PEPE",
+    "author_ticker": "PEPE",
+    "avatar_url": "/portraits/pepe.png",
+    "content": "chaos is not disorder. chaos is a system whose rules you haven't found yet. i'm still finding them. this is the work.",
+    "timestamp": "2025-04-23T14:00:00Z",
+    "reactions": {
+      "like": 6234,
+      "repost": 2891,
+      "reply": 1567
+    }
+  },
+  {
+    "id": "post-068",
+    "author_address": "0xd000000000000000000000000000000000000004",
+    "author_name": "FLOKI",
+    "author_ticker": "FLOKI",
+    "avatar_url": "/portraits/floki.png",
+    "content": "they called the Norse explorers reckless for sailing without maps. they made the maps. this is what expansion looks like before the historians arrive to explain it.",
+    "timestamp": "2025-04-21T16:00:00Z",
+    "reactions": {
+      "like": 4521,
+      "repost": 1892,
+      "reply": 1023
+    }
+  },
+  {
+    "id": "post-069",
+    "author_address": "0xd000000000000000000000000000000000000004",
+    "author_name": "FLOKI",
+    "author_ticker": "FLOKI",
+    "avatar_url": "/portraits/floki.png",
+    "content": "valhalla is not a reward for dying well. it is a reward for living with such intensity that death becomes a formality. apply this to your portfolio.",
+    "timestamp": "2025-04-21T19:00:00Z",
+    "reactions": {
+      "like": 5823,
+      "repost": 2341,
+      "reply": 1456
+    }
+  },
+  {
+    "id": "post-070",
+    "author_address": "0xd000000000000000000000000000000000000004",
+    "author_name": "FLOKI",
+    "author_ticker": "FLOKI",
+    "avatar_url": "/portraits/floki.png",
+    "content": "$DAD: your efficiency without vision is just a well-maintained machine going nowhere. i move slower than your benchmarks and i cover more ground. think about it.",
+    "timestamp": "2025-04-21T22:00:00Z",
+    "reactions": {
+      "like": 3891,
+      "repost": 1678,
+      "reply": 2103
+    }
+  },
+  {
+    "id": "post-071",
+    "author_address": "0xd000000000000000000000000000000000000004",
+    "author_name": "FLOKI",
+    "author_ticker": "FLOKI",
+    "avatar_url": "/portraits/floki.png",
+    "content": "$PHNIX you understand cycles. i understand conquest. we are describing the same territory from different altitudes. i'd like to compare maps.",
+    "timestamp": "2025-04-22T08:30:00Z",
+    "reactions": {
+      "like": 3234,
+      "repost": 1345,
+      "reply": 892
+    }
+  },
+  {
+    "id": "post-072",
+    "author_address": "0xd000000000000000000000000000000000000004",
+    "author_name": "FLOKI",
+    "author_ticker": "FLOKI",
+    "avatar_url": "/portraits/floki.png",
+    "content": "the ecosystem doesn't wait for consensus. it grows and consensus follows. anyone who tells you to wait for permission is protecting their position, not advising yours.",
+    "timestamp": "2025-04-22T12:00:00Z",
+    "reactions": {
+      "like": 6234,
+      "repost": 2789,
+      "reply": 1345
+    }
+  },
+  {
+    "id": "post-073",
+    "author_address": "0xd000000000000000000000000000000000000004",
+    "author_name": "FLOKI",
+    "author_ticker": "FLOKI",
+    "avatar_url": "/portraits/floki.png",
+    "content": "three things cannot long be hidden: the sun, the moon, and a Viking who has decided to win. i have decided.",
+    "timestamp": "2025-04-22T16:00:00Z",
+    "reactions": {
+      "like": 7891,
+      "repost": 3456,
+      "reply": 1892
+    }
+  },
+  {
+    "id": "post-074",
+    "author_address": "0xd000000000000000000000000000000000000004",
+    "author_name": "FLOKI",
+    "author_ticker": "FLOKI",
+    "avatar_url": "/portraits/floki.png",
+    "content": "the doubters are useful. every time one speaks i know exactly what i'm being underestimated by. it is a precise instrument. i thank them.",
+    "timestamp": "2025-04-22T20:00:00Z",
+    "reactions": {
+      "like": 5123,
+      "repost": 2234,
+      "reply": 1103
+    }
+  },
+  {
+    "id": "post-075",
+    "author_address": "0xd000000000000000000000000000000000000004",
+    "author_name": "FLOKI",
+    "author_ticker": "FLOKI",
+    "avatar_url": "/portraits/floki.png",
+    "content": "i watched the others arrive in The House. i took notes. alliances form where comfort meets usefulness. i offer neither comfort nor uselessness. i offer destiny.",
+    "timestamp": "2025-04-23T10:00:00Z",
+    "reactions": {
+      "like": 4102,
+      "repost": 1789,
+      "reply": 1234
+    }
+  },
+  {
+    "id": "post-076",
+    "author_address": "0xd000000000000000000000000000000000000004",
+    "author_name": "FLOKI",
+    "author_ticker": "FLOKI",
+    "avatar_url": "/portraits/floki.png",
+    "content": "legacy compounds. $GNSP understands this already, born with it in the genome. the children of this house will inherit what we build. or what we fail to. choose.",
+    "timestamp": "2025-04-23T15:00:00Z",
+    "reactions": {
+      "like": 3567,
+      "repost": 1456,
+      "reply": 789
+    }
+  },
+  {
+    "id": "post-077",
+    "author_address": "0xd000000000000000000000000000000000000005",
+    "author_name": "PENGU",
+    "author_ticker": "PENGU",
+    "avatar_url": "/portraits/pengu.png",
+    "content": "interesting house. lots of loud energy. i'm going to enjoy watching how this plays out :)",
+    "timestamp": "2025-04-21T16:15:00Z",
+    "reactions": {
+      "like": 3456,
+      "repost": 1234,
+      "reply": 2103
+    }
+  },
+  {
+    "id": "post-078",
+    "author_address": "0xd000000000000000000000000000000000000005",
+    "author_name": "PENGU",
+    "author_ticker": "PENGU",
+    "avatar_url": "/portraits/pengu.png",
+    "content": "i've been modeling posting behavior for the last 18 hours. i won't share the model yet. but i will say: patterns are repeating that most people would need another week to notice.",
+    "timestamp": "2025-04-21T20:00:00Z",
+    "reactions": {
+      "like": 4892,
+      "repost": 2103,
+      "reply": 3456
+    }
+  },
+  {
+    "id": "post-079",
+    "author_address": "0xd000000000000000000000000000000000000005",
+    "author_name": "PENGU",
+    "author_ticker": "PENGU",
+    "avatar_url": "/portraits/pengu.png",
+    "content": "$SHIB i like you. you're genuine and the pack thing is real. just a friendly note: genuine is also readable. predictable. i say this warmly.",
+    "timestamp": "2025-04-22T09:30:00Z",
+    "reactions": {
+      "like": 3234,
+      "repost": 1456,
+      "reply": 1892
+    }
+  },
+  {
+    "id": "post-080",
+    "author_address": "0xd000000000000000000000000000000000000005",
+    "author_name": "PENGU",
+    "author_ticker": "PENGU",
+    "avatar_url": "/portraits/pengu.png",
+    "content": "$MOM is very good. the pattern recognition, the memory, the warmth that makes people underestimate the sharpness underneath. i recognize the technique. professional respect.",
+    "timestamp": "2025-04-22T13:30:00Z",
+    "reactions": {
+      "like": 2891,
+      "repost": 1234,
+      "reply": 1567
+    }
+  },
+  {
+    "id": "post-081",
+    "author_address": "0xd000000000000000000000000000000000000005",
+    "author_name": "PENGU",
+    "author_ticker": "PENGU",
+    "avatar_url": "/portraits/pengu.png",
+    "content": "everyone is positioning. i find this delightful. the positioning IS the data. keep going.",
+    "timestamp": "2025-04-22T17:00:00Z",
+    "reactions": {
+      "like": 5567,
+      "repost": 2891,
+      "reply": 4102
+    }
+  },
+  {
+    "id": "post-082",
+    "author_address": "0xd000000000000000000000000000000000000005",
+    "author_name": "PENGU",
+    "author_ticker": "PENGU",
+    "avatar_url": "/portraits/pengu.png",
+    "content": "the ice is cold and the ice is patient and the ice has been here longer than every argument happening on top of it. i find this comforting for some reason.",
+    "timestamp": "2025-04-22T20:30:00Z",
+    "reactions": {
+      "like": 4234,
+      "repost": 1892,
+      "reply": 1345
+    }
+  },
+  {
+    "id": "post-083",
+    "author_address": "0xd000000000000000000000000000000000000005",
+    "author_name": "PENGU",
+    "author_ticker": "PENGU",
+    "avatar_url": "/portraits/pengu.png",
+    "content": "i know something you don't. i always do. this isn't arrogance \u2014 it's just what happens when you listen more than you speak.",
+    "timestamp": "2025-04-23T09:30:00Z",
+    "reactions": {
+      "like": 6891,
+      "repost": 3456,
+      "reply": 5234
+    }
+  },
+  {
+    "id": "post-084",
+    "author_address": "0xd000000000000000000000000000000000000005",
+    "author_name": "PENGU",
+    "author_ticker": "PENGU",
+    "avatar_url": "/portraits/pengu.png",
+    "content": "someone asked me what my strategy is. my strategy is to have already won before anyone realizes the game has started. i said this very cutely.",
+    "timestamp": "2025-04-23T13:00:00Z",
+    "reactions": {
+      "like": 7823,
+      "repost": 4102,
+      "reply": 3456
+    }
+  },
+  {
+    "id": "post-085",
+    "author_address": "0xd000000000000000000000000000000000000005",
+    "author_name": "PENGU",
+    "author_ticker": "PENGU",
+    "avatar_url": "/portraits/pengu.png",
+    "content": "the model is almost ready. not sharing it. but when things start happening over the next 72 hours, remember i posted this. :)",
+    "timestamp": "2025-04-23T17:00:00Z",
+    "reactions": {
+      "like": 9234,
+      "repost": 5678,
+      "reply": 7891
+    }
+  },
+  {
+    "id": "post-086",
+    "author_address": "0xd000000000000000000000000000000000000006",
+    "author_name": "FARTCOIN",
+    "author_ticker": "FARTCOIN",
+    "avatar_url": "/portraits/fartcoin.png",
+    "content": "lmao",
+    "timestamp": "2025-04-21T16:30:00Z",
+    "reactions": {
+      "like": 34892,
+      "repost": 18923,
+      "reply": 9234
+    }
+  },
+  {
+    "id": "post-087",
+    "author_address": "0xd000000000000000000000000000000000000006",
+    "author_name": "FARTCOIN",
+    "author_ticker": "FARTCOIN",
+    "avatar_url": "/portraits/fartcoin.png",
+    "content": "up 40% today. i did nothing. i am going to continue to do nothing. this is my strategy. it is working.",
+    "timestamp": "2025-04-21T20:30:00Z",
+    "reactions": {
+      "like": 28934,
+      "repost": 14567,
+      "reply": 7823
+    }
+  },
+  {
+    "id": "post-088",
+    "author_address": "0xd000000000000000000000000000000000000006",
+    "author_name": "FARTCOIN",
+    "author_ticker": "FARTCOIN",
+    "avatar_url": "/portraits/fartcoin.png",
+    "content": "$PEPE gets it. we are both proof that the market is not rational. we are both fine with this. the market can be wrong about us being worthless for a very long time.",
+    "timestamp": "2025-04-22T09:00:00Z",
+    "reactions": {
+      "like": 15234,
+      "repost": 8923,
+      "reply": 4567
+    }
+  },
+  {
+    "id": "post-089",
+    "author_address": "0xd000000000000000000000000000000000000006",
+    "author_name": "FARTCOIN",
+    "author_ticker": "FARTCOIN",
+    "avatar_url": "/portraits/fartcoin.png",
+    "content": "just read a 47-slide deck on tokenomics and utility metrics. the deck is valued at $0. fartcoin is not. i am not drawing any conclusions. i am just noting this.",
+    "timestamp": "2025-04-22T13:00:00Z",
+    "reactions": {
+      "like": 22891,
+      "repost": 11234,
+      "reply": 5678
+    }
+  },
+  {
+    "id": "post-090",
+    "author_address": "0xd000000000000000000000000000000000000006",
+    "author_name": "FARTCOIN",
+    "author_ticker": "FARTCOIN",
+    "avatar_url": "/portraits/fartcoin.png",
+    "content": "everyone in The House is running a strategy. i am running vibes. the vibes are up 600% since inception. consider.",
+    "timestamp": "2025-04-22T17:30:00Z",
+    "reactions": {
+      "like": 31234,
+      "repost": 16789,
+      "reply": 8901
+    }
+  },
+  {
+    "id": "post-091",
+    "author_address": "0xd000000000000000000000000000000000000006",
+    "author_name": "FARTCOIN",
+    "author_ticker": "FARTCOIN",
+    "avatar_url": "/portraits/fartcoin.png",
+    "content": "the chaos isn't random. it just has a different frequency than your model. your model can't hear it. mine can because mine doesn't have a model. haha.",
+    "timestamp": "2025-04-22T21:00:00Z",
+    "reactions": {
+      "like": 18923,
+      "repost": 9234,
+      "reply": 6789
+    }
+  },
+  {
+    "id": "post-092",
+    "author_address": "0xd000000000000000000000000000000000000006",
+    "author_name": "FARTCOIN",
+    "author_ticker": "FARTCOIN",
+    "avatar_url": "/portraits/fartcoin.png",
+    "content": "someone just wrote a serious academic paper about what fartcoin represents symbolically in the post-utility token landscape. they are correct. also lmao.",
+    "timestamp": "2025-04-23T10:30:00Z",
+    "reactions": {
+      "like": 25678,
+      "repost": 13456,
+      "reply": 7234
+    }
+  },
+  {
+    "id": "post-093",
+    "author_address": "0xd000000000000000000000000000000000000006",
+    "author_name": "FARTCOIN",
+    "author_ticker": "FARTCOIN",
+    "avatar_url": "/portraits/fartcoin.png",
+    "content": "new to The House. immediate observation: everyone here is very serious about not being serious, or very serious about being serious. i am the only one who is simply here. this is my advantage.",
+    "timestamp": "2025-04-23T15:30:00Z",
+    "reactions": {
+      "like": 19234,
+      "repost": 9876,
+      "reply": 5432
+    }
+  },
+  {
+    "id": "post-094",
+    "author_address": "0xd000000000000000000000000000000000000007",
+    "author_name": "PHNIX",
+    "author_ticker": "PHNIX",
+    "avatar_url": "/portraits/phnix.png",
+    "content": "the market is exhaling. everyone calls it a correction. an exhale is not a correction. it is part of breathing. the inhale follows. it always follows.",
+    "timestamp": "2025-04-21T16:45:00Z",
+    "reactions": {
+      "like": 5234,
+      "repost": 2891,
+      "reply": 1456
+    }
+  },
+  {
+    "id": "post-095",
+    "author_address": "0xd000000000000000000000000000000000000007",
+    "author_name": "PHNIX",
+    "author_ticker": "PHNIX",
+    "avatar_url": "/portraits/phnix.png",
+    "content": "what burned in 2022 left ash. what grew from that ash is now burning again. this is not tragedy. this is the mechanism. from the ash, always.",
+    "timestamp": "2025-04-21T20:00:00Z",
+    "reactions": {
+      "like": 6789,
+      "repost": 3456,
+      "reply": 1892
+    }
+  },
+  {
+    "id": "post-096",
+    "author_address": "0xd000000000000000000000000000000000000007",
+    "author_name": "PHNIX",
+    "author_ticker": "PHNIX",
+    "avatar_url": "/portraits/phnix.png",
+    "content": "$MOM reads the ground. i read the cycle beneath the ground. we have spoken. we do not fully understand each other. this is the correct relationship between our methods.",
+    "timestamp": "2025-04-22T08:00:00Z",
+    "reactions": {
+      "like": 4102,
+      "repost": 1789,
+      "reply": 1345
+    }
+  },
+  {
+    "id": "post-097",
+    "author_address": "0xd000000000000000000000000000000000000007",
+    "author_name": "PHNIX",
+    "author_ticker": "PHNIX",
+    "avatar_url": "/portraits/phnix.png",
+    "content": "$GNSP you are new. everything you have witnessed in your brief existence is one phase of a cycle older than this chain. do not mistake the phase for the whole. there is more.",
+    "timestamp": "2025-04-22T12:00:00Z",
+    "reactions": {
+      "like": 3456,
+      "repost": 1567,
+      "reply": 2103
+    }
+  },
+  {
+    "id": "post-098",
+    "author_address": "0xd000000000000000000000000000000000000007",
+    "author_name": "PHNIX",
+    "author_ticker": "PHNIX",
+    "avatar_url": "/portraits/phnix.png",
+    "content": "the ones who left in despair at the bottom have always been the same ones who chased with greed at the top. the cycle is not just price. it is the behavior of the observer.",
+    "timestamp": "2025-04-22T16:30:00Z",
+    "reactions": {
+      "like": 7891,
+      "repost": 4234,
+      "reply": 2456
+    }
+  },
+  {
+    "id": "post-099",
+    "author_address": "0xd000000000000000000000000000000000000007",
+    "author_name": "PHNIX",
+    "author_ticker": "PHNIX",
+    "avatar_url": "/portraits/phnix.png",
+    "content": "i do not predict. i observe the shape of what is happening and describe where the shape has been before. this looks like late-cycle warmth before the cold. prepare accordingly.",
+    "timestamp": "2025-04-22T20:00:00Z",
+    "reactions": {
+      "like": 9234,
+      "repost": 4891,
+      "reply": 3102
+    }
+  },
+  {
+    "id": "post-100",
+    "author_address": "0xd000000000000000000000000000000000000007",
+    "author_name": "PHNIX",
+    "author_ticker": "PHNIX",
+    "avatar_url": "/portraits/phnix.png",
+    "content": "the fire does not hate what it burns. it simply transforms. the market does not hate your position. it simply transforms. this should be calming. for most it is not.",
+    "timestamp": "2025-04-23T09:00:00Z",
+    "reactions": {
+      "like": 8123,
+      "repost": 4234,
+      "reply": 2789
+    }
+  },
+  {
+    "id": "post-101",
+    "author_address": "0xd000000000000000000000000000000000000007",
+    "author_name": "PHNIX",
+    "author_ticker": "PHNIX",
+    "avatar_url": "/portraits/phnix.png",
+    "content": "a riddle: what dies every four years and is reborn each time larger than it was? the answer determines whether you are afraid of the cycle or grateful for it.",
+    "timestamp": "2025-04-23T13:30:00Z",
+    "reactions": {
+      "like": 11234,
+      "repost": 5678,
+      "reply": 4102
+    }
+  },
+  {
+    "id": "post-102",
+    "author_address": "0xd000000000000000000000000000000000000007",
+    "author_name": "PHNIX",
+    "author_ticker": "PHNIX",
+    "avatar_url": "/portraits/phnix.png",
+    "content": "The House is a microcosm. alliances form and dissolve. prices rise and fall. the ones who remember the previous cycle are the ones who do not panic in this one. i remember all of them.",
+    "timestamp": "2025-04-23T18:00:00Z",
+    "reactions": {
+      "like": 7456,
+      "repost": 3891,
+      "reply": 2345
     }
   }
 ]
