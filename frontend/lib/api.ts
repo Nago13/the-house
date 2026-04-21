@@ -2,13 +2,16 @@ const API_BASE =
   process.env.NEXT_PUBLIC_API_URL ??
   "https://the-house-backend-production.up.railway.app";
 
-import contestants from "@/lib/contestants";
+// Lowercase addresses with live chat unlocked
+const CHAT_ENABLED_ADDRESSES = new Set([
+  "0x2a9796be8c555558d10079e53fb35a2e5da6a317", // MOM
+  "0xd000000000000000000000000000000000000001", // SHIB
+  "0xd000000000000000000000000000000000000002", // DOGE
+  "0xd000000000000000000000000000000000000007", // PHNIX
+]);
 
 export function isChatEnabled(address: string): boolean {
-  const c = contestants.find(
-    (x) => x.token_address.toLowerCase() === address.toLowerCase()
-  );
-  return c?.chat_enabled === true;
+  return CHAT_ENABLED_ADDRESSES.has(address.toLowerCase());
 }
 
 export async function sendChatMessage(
