@@ -97,8 +97,13 @@ function buildGraph() {
   // Track final x positions by address so children can center on parents
   const posMap: Record<string, { x: number; y: number }> = {};
 
-  // Gen 0: lay out left-to-right, centred around x=0
-  const gen0 = byGen[0] ?? [];
+  // Gen 0: enforce display order — founders (MOM/DAD) centred, rivals adjacent
+  const GEN0_ORDER = ["SHIB","DOGE","PEPE","MOM","DAD","FLOKI","PENGU","FARTCOIN","PHNIX"];
+  const gen0Raw = byGen[0] ?? [];
+  const gen0 = [
+    ...GEN0_ORDER.map((t) => gen0Raw.find((c) => c.ticker === t)).filter(Boolean),
+    ...gen0Raw.filter((c) => !GEN0_ORDER.includes(c.ticker)),
+  ] as typeof contestants;
   const totalW0 = gen0.length * NODE_W + (gen0.length - 1) * H_GAP;
   const startX0 = -(totalW0 / 2);
   gen0.forEach((c, i) => {
@@ -130,19 +135,34 @@ function buildGraph() {
       // Edges from parents — only addresses that actually exist as nodes
       for (const parentAddr of c.parents) {
         if (!posMap[parentAddr]) continue;
-        const parentC = contestants.find((p) => p.token_address === parentAddr);
-        const edgeColor = parentC ? tickerColor(parentC.ticker, parentC.generation) : "#444";
         edges.push({
           id:           `${parentAddr}->${c.token_address}`,
           source:       parentAddr,
           target:       c.token_address,
           animated:     false,
-          style:        { stroke: edgeColor, strokeWidth: 1.5, opacity: 0.5 },
+          style:        { stroke: "#F59E0B", strokeWidth: 2.5, opacity: 0.8 },
           label:        "parent",
-          labelStyle:   { fill: "#6b6560", fontSize: 9 },
+          labelStyle:   { fill: "#F59E0B", fontSize: 9, opacity: 0.7 },
           labelBgStyle: { fill: "#0a0a0a" },
         });
       }
+    });
+  }
+
+  // SHIB ⚔ DOGE rivalry edge
+  const shibAddr = "0xd000000000000000000000000000000000000001";
+  const dogeAddr = "0xd000000000000000000000000000000000000002";
+  if (posMap[shibAddr] && posMap[dogeAddr]) {
+    edges.push({
+      id:           "shib-vs-doge",
+      source:       shibAddr,
+      target:       dogeAddr,
+      type:         "straight",
+      animated:     false,
+      style:        { stroke: "#EF4444", strokeWidth: 2, strokeDasharray: "5,4", opacity: 0.85 },
+      label:        "⚔ RIVALS",
+      labelStyle:   { fill: "#EF4444", fontSize: 10, fontWeight: 700 },
+      labelBgStyle: { fill: "#0a0a0a", fillOpacity: 0.9 },
     });
   }
 
