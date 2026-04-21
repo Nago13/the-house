@@ -22,10 +22,17 @@ const config: Config = {
           dad:     "#2dd4bf",
           child:   "#a78bfa",
         },
+        obsidian:  "#07060A",
+        surface:   "#0E0C14",
+        text: {
+          primary:   "#F5F5F7",
+          secondary: "#A1A1AA",
+        },
       },
       fontFamily: {
-        sans: ["var(--font-geist-sans)", "sans-serif"],
-        mono: ["var(--font-geist-mono)", "monospace"],
+        sans:    ["var(--font-geist-sans)", "sans-serif"],
+        mono:    ["var(--font-geist-mono)", "monospace"],
+        display: ["var(--font-instrument-serif)", "Georgia", "serif"],
       },
       animation: {
         "fade-in":    "fadeIn 0.4s ease-in-out",
