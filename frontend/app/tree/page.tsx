@@ -35,19 +35,32 @@ function tickerColor(ticker: string, generation: number): string {
 
 // ── Custom node ────────────────────────────────────────────────────────────
 
+const GEN_SIZES: Record<number, number> = {
+  0: 152,
+  1: 120,
+};
+const DEFAULT_SIZE = 100;
+
 function ContestantNode({ data }: NodeProps) {
   const color = tickerColor(data.ticker, data.generation);
+  const size = GEN_SIZES[data.generation as number] ?? DEFAULT_SIZE;
+
   return (
-    <div className="flex flex-col items-center w-28 hover:scale-[1.05] transition-transform">
+    <div
+      className="flex flex-col items-center hover:scale-[1.05] transition-transform"
+      style={{ width: size }}
+    >
       <Handle type="target" position={Position.Top} style={{ background: "transparent", border: "none", top: 0 }} />
 
-      <Link href={`/profile/${data.token_address}`} className="flex flex-col items-center gap-1.5">
+      <Link href={`/profile/${data.token_address}`} className="flex flex-col items-center gap-2">
         {/* Coin circle */}
         <div
-          className="relative w-20 h-20 rounded-full overflow-hidden"
+          className="relative rounded-full overflow-hidden flex-shrink-0"
           style={{
-            border: `2.5px solid ${color}`,
-            boxShadow: `0 0 10px ${color}55, 0 0 24px ${color}22`,
+            width: size,
+            height: size,
+            border: `3px solid ${color}`,
+            boxShadow: `0 0 14px ${color}66, 0 0 32px ${color}33`,
           }}
         >
           <Image
@@ -59,18 +72,18 @@ function ContestantNode({ data }: NodeProps) {
           />
           {data.generation > 0 && (
             <span
-              className="absolute bottom-0.5 right-0.5 text-[7px] font-mono tracking-widest px-1 py-0.5 rounded-full"
-              style={{ background: `${color}cc`, color: "#000" }}
+              className="absolute bottom-1 right-1 text-[9px] font-mono font-bold px-1.5 py-0.5 rounded-full"
+              style={{ background: `${color}dd`, color: "#000" }}
             >
-              G{data.generation}
+              GEN {data.generation}
             </span>
           )}
         </div>
 
         {/* Label */}
-        <div className="text-center">
-          <p className="font-bold text-[10px] text-house-text truncate max-w-[6rem]">{data.name}</p>
-          <p className="font-mono text-[9px] truncate max-w-[6rem]" style={{ color }}>
+        <div className="text-center" style={{ maxWidth: size + 16 }}>
+          <p className="font-bold text-sm text-house-text truncate leading-tight">{data.name}</p>
+          <p className="font-mono text-xs font-semibold truncate" style={{ color }}>
             ${data.ticker}
           </p>
         </div>
@@ -85,25 +98,22 @@ const nodeTypes = { contestant: ContestantNode };
 
 // ── Layout ─────────────────────────────────────────────────────────────────
 
-const NODE_W  = 160;
-const H_GAP   = 44;   // gap between nodes in same row
+const NODE_W  = 152;
+const H_GAP   = 72;   // generous breathing room between nodes
 const STEP    = NODE_W + H_GAP;
-const V_GAP   = 220;  // vertical distance between generations
+const V_GAP   = 260;  // vertical distance between generations
 
 function buildGraph() {
   const nodes: Node[] = [];
   const edges: Edge[] = [];
 
-  // Separate by generation
   const byGen: Record<number, typeof contestants> = {};
   for (const c of contestants) {
     (byGen[c.generation] ??= []).push(c);
   }
 
-  // Track final x positions by address so children can center on parents
   const posMap: Record<string, { x: number; y: number }> = {};
 
-  // Gen 0: enforce display order — founders (MOM/DAD) centred, rivals adjacent
   const GEN0_ORDER = ["SHIB","DOGE","PEPE","MOM","DAD","FLOKI","PENGU","FARTCOIN","PHNIX"];
   const gen0Raw = byGen[0] ?? [];
   const gen0 = [
@@ -118,18 +128,14 @@ function buildGraph() {
     nodes.push({ id: c.token_address, type: "contestant", position: pos, data: c });
   });
 
-  // Gen 1+: position each child centred over its parents, row by row
   const maxGen = Math.max(...contestants.map((c) => c.generation));
   for (let gen = 1; gen <= maxGen; gen++) {
     const genNodes = byGen[gen] ?? [];
     const y = gen * (NODE_W + V_GAP);
 
     genNodes.forEach((c, i) => {
-      // Centre child under its parents' midpoint
-      let x = startX0 + i * STEP; // fallback if no parents resolved
-      const resolvedParents = c.parents
-        .map((addr) => posMap[addr])
-        .filter(Boolean);
+      let x = startX0 + i * STEP;
+      const resolvedParents = c.parents.map((addr) => posMap[addr]).filter(Boolean);
       if (resolvedParents.length > 0) {
         x = resolvedParents.reduce((sum, p) => sum + p.x, 0) / resolvedParents.length;
       }
@@ -138,7 +144,6 @@ function buildGraph() {
       posMap[c.token_address] = pos;
       nodes.push({ id: c.token_address, type: "contestant", position: pos, data: c });
 
-      // Edges from parents — only addresses that actually exist as nodes
       for (const parentAddr of c.parents) {
         if (!posMap[parentAddr]) continue;
         edges.push({
@@ -146,10 +151,10 @@ function buildGraph() {
           source:       parentAddr,
           target:       c.token_address,
           animated:     false,
-          style:        { stroke: "#F59E0B", strokeWidth: 2.5, opacity: 0.8 },
+          style:        { stroke: "#F59E0B", strokeWidth: 3, opacity: 1 },
           label:        "parent",
-          labelStyle:   { fill: "#F59E0B", fontSize: 9, opacity: 0.7 },
-          labelBgStyle: { fill: "#0a0a0a" },
+          labelStyle:   { fill: "#F59E0B", fontSize: 11, fontWeight: 700, opacity: 0.9 },
+          labelBgStyle: { fill: "#0a0a0a", fillOpacity: 0.85 },
         });
       }
     });
@@ -165,10 +170,10 @@ function buildGraph() {
       target:       dogeAddr,
       type:         "straight",
       animated:     false,
-      style:        { stroke: "#EF4444", strokeWidth: 2, strokeDasharray: "5,4", opacity: 0.85 },
+      style:        { stroke: "#FF2222", strokeWidth: 3, strokeDasharray: "6,4", opacity: 1 },
       label:        "⚔ RIVALS",
-      labelStyle:   { fill: "#EF4444", fontSize: 10, fontWeight: 700 },
-      labelBgStyle: { fill: "#0a0a0a", fillOpacity: 0.9 },
+      labelStyle:   { fill: "#FF2222", fontSize: 13, fontWeight: 900 },
+      labelBgStyle: { fill: "#0a0a0a", fillOpacity: 0.95 },
     });
   }
 
@@ -197,7 +202,7 @@ export default function TreePage() {
         edges={edges}
         nodeTypes={nodeTypes}
         fitView
-        fitViewOptions={{ padding: 0.25 }}
+        fitViewOptions={{ padding: 0.2 }}
         proOptions={{ hideAttribution: true }}
       >
         <Background variant={BackgroundVariant.Dots} gap={24} size={1} color="#1a1a1a" />
