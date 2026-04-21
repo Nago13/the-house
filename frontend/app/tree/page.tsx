@@ -188,11 +188,18 @@ export default function TreePage() {
 
   return (
     <div style={{ width: "100vw", height: "calc(100vh - 3.5rem)" }}>
-      <div className="absolute top-16 left-4 z-10 bg-house-bg/80 backdrop-blur border border-house-border rounded-lg px-4 py-2">
-        <p className="font-mono text-house-amber text-xs tracking-widest uppercase">
+      <div
+        className="absolute top-16 left-4 z-10 rounded-2xl px-4 py-3"
+        style={{
+          background: "rgba(0,0,0,0.88)",
+          backdropFilter: "blur(16px)",
+          border: "1px solid rgba(139,92,246,0.2)",
+        }}
+      >
+        <p className="font-mono text-xs tracking-[0.2em] uppercase" style={{ color: "#8B5CF6" }}>
           Family Tree
         </p>
-        <p className="font-mono text-house-muted text-xs mt-0.5">
+        <p className="font-mono text-xs mt-0.5" style={{ color: "rgba(255,255,255,0.35)" }}>
           {contestants.length} nodes · Gen 0–{maxGen}
         </p>
       </div>
@@ -205,9 +212,9 @@ export default function TreePage() {
         fitViewOptions={{ padding: 0.2 }}
         proOptions={{ hideAttribution: true }}
       >
-        <Background variant={BackgroundVariant.Dots} gap={24} size={1} color="#1a1a1a" />
+        <Background variant={BackgroundVariant.Dots} gap={24} size={1} color="#111111" />
         <Controls
-          style={{ background: "#141414", border: "1px solid #262626", borderRadius: "8px" }}
+          style={{ background: "#0a0a0a", border: "1px solid rgba(139,92,246,0.2)", borderRadius: "12px" }}
         />
       </ReactFlow>
     </div>

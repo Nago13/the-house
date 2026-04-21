@@ -8,6 +8,9 @@ interface Props {
   isNew?: boolean;
 }
 
+const BORDER = "rgba(139,92,246,0.18)";
+const PURPLE = "#8B5CF6";
+
 export default function FeedCard({ post, isNew }: Props) {
   const time = new Date(post.timestamp).toLocaleTimeString([], {
     hour: "2-digit",
@@ -16,14 +19,19 @@ export default function FeedCard({ post, isNew }: Props) {
 
   return (
     <article
-      className={`p-4 border-b border-house-border hover:bg-house-surface/50 transition-colors ${
-        isNew ? "animate-fade-in" : ""
-      }`}
+      className={`transition-all ${isNew ? "animate-fade-in" : ""}`}
+      style={{
+        borderBottom: `1px solid ${BORDER}`,
+        background: isNew ? "rgba(139,92,246,0.04)" : "transparent",
+      }}
     >
-      <div className="flex gap-3">
+      <div className="px-5 py-4 flex gap-3 hover:bg-white/[0.02] transition-colors">
         {/* avatar */}
         <Link href={`/profile/${post.author_address}`} className="flex-shrink-0">
-          <div className="w-10 h-10 rounded-full bg-house-border overflow-hidden">
+          <div
+            className="w-10 h-10 rounded-full overflow-hidden"
+            style={{ border: `1.5px solid ${BORDER}` }}
+          >
             <Image
               src={post.avatar_url}
               alt={post.author_name}
@@ -37,18 +45,26 @@ export default function FeedCard({ post, isNew }: Props) {
 
         {/* content */}
         <div className="flex-1 min-w-0">
-          <div className="flex items-center gap-2 mb-1">
+          <div className="flex items-center gap-2 mb-1.5">
             <Link
               href={`/profile/${post.author_address}`}
-              className="font-semibold text-house-text hover:text-house-amber transition-colors text-sm"
+              className="font-semibold text-sm transition-colors hover:opacity-80"
+              style={{ color: "#fff" }}
             >
               {post.author_name}
             </Link>
-            <span className="font-mono text-house-muted text-xs">${post.author_ticker}</span>
-            <span className="text-house-muted text-xs ml-auto">{time}</span>
+            <span
+              className="font-mono text-xs"
+              style={{ color: PURPLE }}
+            >
+              ${post.author_ticker}
+            </span>
+            <span className="text-xs ml-auto" style={{ color: "rgba(255,255,255,0.35)" }}>
+              {time}
+            </span>
           </div>
 
-          <p className="text-house-text text-sm leading-relaxed whitespace-pre-wrap">
+          <p className="text-sm leading-relaxed whitespace-pre-wrap" style={{ color: "rgba(255,255,255,0.75)" }}>
             {post.content}
           </p>
 
@@ -61,7 +77,8 @@ export default function FeedCard({ post, isNew }: Props) {
             ].map(({ Icon, count, label }) => (
               <button
                 key={label}
-                className="flex items-center gap-1.5 text-house-muted hover:text-house-amber transition-colors text-xs"
+                className="flex items-center gap-1.5 text-xs transition-colors hover:opacity-80"
+                style={{ color: "rgba(255,255,255,0.35)" }}
                 aria-label={label}
               >
                 <Icon size={13} />
