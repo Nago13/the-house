@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(.venv/Scripts/python -c ' *)",
+      "Bash(npx create-next-app@14 frontend --typescript --tailwind --app --no-src-dir --import-alias \"@/*\" --yes)",
+      "Bash(npx create-next-app@14 frontend --typescript --tailwind --app --no-src-dir --import-alias \"@/*\" --eslint --no-git)",
+      "Bash(npm install *)",
+      "Bash(npx tsc *)",
+      "Bash(npm run *)",
+      "Bash(.venv/Scripts/python scripts/generate_portraits.py)",
+      "Bash(PYTHONIOENCODING=utf-8 .venv/Scripts/python scripts/generate_portraits.py)",
+      "Bash(.venv/Scripts/pip install *)",
+      "Bash(.venv/Scripts/python scripts/generate_placeholder_portraits.py)",
+      "Bash(PYTHONIOENCODING=utf-8 .venv/Scripts/python scripts/generate_placeholder_portraits.py)",
+      "Bash(.venv/Scripts/python -c \"from PIL import Image; img = Image.open\\('frontend/public/portraits/mom.png'\\); print\\(f'MOM: {img.size}, mode={img.mode}'\\)\")",
+      "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(list\\(d.keys\\(\\)\\)[:5]\\)\")",
+      "Bash(python -c ' *)",
+      "Bash(PYTHONIOENCODING=utf-8 .venv/Scripts/python scripts/register_genomes.py)",
+      "Bash(PYTHONIOENCODING=utf-8 .venv/Scripts/python scripts/run_mating.py)",
+      "Bash(PYTHONIOENCODING=utf-8 .venv/Scripts/python -m uvicorn backend.main:app --host 0.0.0.0 --port 8000 --reload)",
+      "Read(//tmp/**)"
+    ]
+  }
+}
