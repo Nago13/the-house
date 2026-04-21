@@ -38,14 +38,18 @@ function tickerColor(ticker: string, generation: number): string {
 function ContestantNode({ data }: NodeProps) {
   const color = tickerColor(data.ticker, data.generation);
   return (
-    <div
-      className="w-40 bg-house-surface rounded-xl overflow-hidden hover:scale-[1.03] transition-transform"
-      style={{ border: `1px solid ${color}33` }}
-    >
-      <Handle type="target" position={Position.Top}    style={{ background: "#262626", border: "none" }} />
+    <div className="flex flex-col items-center w-28 hover:scale-[1.05] transition-transform">
+      <Handle type="target" position={Position.Top} style={{ background: "transparent", border: "none", top: 0 }} />
 
-      <Link href={`/profile/${data.token_address}`}>
-        <div className="relative w-full h-28 bg-house-border">
+      <Link href={`/profile/${data.token_address}`} className="flex flex-col items-center gap-1.5">
+        {/* Coin circle */}
+        <div
+          className="relative w-20 h-20 rounded-full overflow-hidden"
+          style={{
+            border: `2.5px solid ${color}`,
+            boxShadow: `0 0 10px ${color}55, 0 0 24px ${color}22`,
+          }}
+        >
           <Image
             src={data.portrait_url}
             alt={data.name}
@@ -55,22 +59,24 @@ function ContestantNode({ data }: NodeProps) {
           />
           {data.generation > 0 && (
             <span
-              className="absolute top-1.5 right-1.5 text-[8px] font-mono tracking-widest px-1.5 py-0.5 rounded-full"
-              style={{ background: `${color}22`, color, border: `1px solid ${color}44` }}
+              className="absolute bottom-0.5 right-0.5 text-[7px] font-mono tracking-widest px-1 py-0.5 rounded-full"
+              style={{ background: `${color}cc`, color: "#000" }}
             >
-              GEN {data.generation}
+              G{data.generation}
             </span>
           )}
         </div>
-        <div className="px-3 py-2">
-          <p className="font-bold text-xs text-house-text truncate">{data.name}</p>
-          <p className="font-mono text-xs truncate" style={{ color }}>
-            ${data.ticker} · Gen {data.generation}
+
+        {/* Label */}
+        <div className="text-center">
+          <p className="font-bold text-[10px] text-house-text truncate max-w-[6rem]">{data.name}</p>
+          <p className="font-mono text-[9px] truncate max-w-[6rem]" style={{ color }}>
+            ${data.ticker}
           </p>
         </div>
       </Link>
 
-      <Handle type="source" position={Position.Bottom} style={{ background: "#262626", border: "none" }} />
+      <Handle type="source" position={Position.Bottom} style={{ background: "transparent", border: "none", bottom: 0 }} />
     </div>
   );
 }
