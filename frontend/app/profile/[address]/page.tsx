@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { getContestant } from "@/lib/contestants";
+import { isChatEnabled } from "@/lib/api";
 import TraitBar from "@/components/TraitBar";
 
 interface Props {
@@ -27,7 +28,7 @@ export default function ProfilePage({ params }: Props) {
   if (!c) notFound();
 
   const accentColor = TICKER_COLORS[c.ticker] ?? PURPLE_LIGHT;
-  const chatEnabled = ["MOM", "DAD", "GNSP"].includes(c.ticker);
+  const chatEnabled = isChatEnabled(c.token_address);
 
   return (
     <div className="max-w-2xl mx-auto px-4 py-12">
