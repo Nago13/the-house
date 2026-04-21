@@ -1,4 +1,6 @@
-const API_BASE = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
+const API_BASE =
+  process.env.NEXT_PUBLIC_API_URL ??
+  "https://the-house-backend-production.up.railway.app";
 
 // MOM's mock address — the only contestant with real chat in MVP
 const MOM_ADDRESS = "0x2A9796Be8C555558d10079E53FB35A2e5dA6a317";
