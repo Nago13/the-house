@@ -4,14 +4,14 @@ import { useRef } from "react"
 import { motion, useInView } from "motion/react"
 
 const NODES = [
-  { id: "MOM",   label: "MOMCOIN", ticker: "$MOM",  color: "#F5C842", cx: 150, cy: 80,  r: 28, cap: "4.2M" },
-  { id: "DAD",   label: "DADCOIN", ticker: "$DAD",  color: "#A855F7", cx: 450, cy: 80,  r: 28, cap: "3.8M" },
-  { id: "BABY",  label: "BABYCOIN",ticker: "$BABY", color: "#F59E0B", cx: 300, cy: 280, r: 22, cap: "1.1M" },
+  { id: "MOM",  label: "MOMCOIN",       ticker: "$MOM",  color: "#F5C842", cx: 150, cy: 80,  r: 28, cap: "4.2M" },
+  { id: "DAD",  label: "DADCOIN",       ticker: "$DAD",  color: "#A855F7", cx: 450, cy: 80,  r: 28, cap: "3.8M" },
+  { id: "GNSP", label: "GENESIS PRIME", ticker: "$GNSP", color: "#F59E0B", cx: 300, cy: 280, r: 22, cap: "—" },
 ]
 
 const EDGES = [
-  { from: "MOM",  to: "BABY", d: "M 150 108 C 150 190 300 190 300 258", color: "#F5C842" },
-  { from: "DAD",  to: "BABY", d: "M 450 108 C 450 190 300 190 300 258", color: "#A855F7" },
+  { from: "MOM",  to: "GNSP", d: "M 150 108 C 150 190 300 190 300 258", color: "#F5C842" },
+  { from: "DAD",  to: "GNSP", d: "M 450 108 C 450 190 300 190 300 258", color: "#A855F7" },
 ]
 
 export function Dynasty() {
