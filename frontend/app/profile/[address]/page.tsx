@@ -27,7 +27,7 @@ export default function ProfilePage({ params }: Props) {
   if (!c) notFound();
 
   const accentColor = TICKER_COLORS[c.ticker] ?? PURPLE_LIGHT;
-  const isMom = c.ticker === "MOM";
+  const chatEnabled = ["MOM", "DAD", "GNSP"].includes(c.ticker);
 
   return (
     <div className="max-w-2xl mx-auto px-4 py-12">
@@ -154,7 +154,7 @@ export default function ProfilePage({ params }: Props) {
 
       {/* ── Chat CTA ── */}
       <div className="mt-10">
-        {isMom ? (
+        {chatEnabled ? (
           <Link
             href={`/chat/${c.token_address}`}
             className="block w-full text-center px-6 py-4 rounded-2xl font-semibold text-sm transition-opacity hover:opacity-80"
