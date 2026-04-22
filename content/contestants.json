@@ -163,8 +163,8 @@
     "portrait_url": "/portraits/floki.png",
     "birth_block": 0,
     "lore_embedding": [],
-    "deploy_tx": null,
-    "mock_deploy": true
+    "deploy_tx": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "mock_deploy": false
   },
   {
     "token_address": "0xdd81F1B6820C86984C0374C6483CB2c8c169477F",

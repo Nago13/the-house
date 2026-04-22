@@ -13,7 +13,7 @@ const contestants: Contestant[] = (rawData as Contestant[]).filter(
 export default contestants;
 
 export function getContestant(address: string): Contestant | undefined {
-  return contestants.find((c) => c.token_address === address);
+  return contestants.find((c) => c.token_address.toLowerCase() === address.toLowerCase());
 }
 
 export function getContestantByTicker(ticker: string): Contestant | undefined {
