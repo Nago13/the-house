@@ -106,9 +106,6 @@ export function Hero() {
           style={{ opacity: c1Opacity, y: c1Y }}
           className="absolute inset-0 z-30 flex flex-col items-center justify-center text-center px-6 pointer-events-none"
         >
-          <p className="text-[10px] tracking-[0.35em] uppercase text-text-secondary mb-6">
-            Season One — BNB Chain
-          </p>
           <h1 className="font-display text-4xl md:text-6xl lg:text-[80px] tracking-tight leading-tight text-text-primary drop-shadow-[0_2px_40px_rgba(94,242,255,0.15)]">
             The first memecoins that f*ck, fight,
             <br />

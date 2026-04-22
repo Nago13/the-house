@@ -223,7 +223,7 @@ function SectionDivider({ label, sublabel, inView, delay }: { label: string; sub
         <div className="flex-1 h-px bg-white/5" />
       </div>
       {sublabel && (
-        <p className="text-[10px] text-text-secondary/60 tracking-wider font-mono">{sublabel}</p>
+        <p className="text-lg md:text-xl text-text-secondary/70 leading-relaxed text-center max-w-2xl">{sublabel}</p>
       )}
     </motion.div>
   )
