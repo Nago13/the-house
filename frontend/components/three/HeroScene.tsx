@@ -532,7 +532,7 @@ function Scene() {
     state.camera.position.x += (camX - state.camera.position.x) * 0.018
     state.camera.position.y += (camY - state.camera.position.y) * 0.018
     state.camera.position.z += (camZ - state.camera.position.z) * 0.022
-    state.camera.lookAt(0, 0, 0)
+    state.camera.lookAt(0, 3.0, 0)
   })
 
   return (
