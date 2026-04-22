@@ -8,7 +8,7 @@ interface TranscriptEntry { speaker: string; ticker: string; content: string; ti
 interface AgreedTerms { child_name_hint: string; inheritance_note: string; dowry_amount: string; }
 interface Transcript { transcript: TranscriptEntry[]; agreed_terms: AgreedTerms; }
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
+const API_BASE = process.env.NEXT_PUBLIC_API_URL ?? "https://the-house-backend-production.up.railway.app";
 
 const FALLBACK: Transcript = {
   transcript: [
@@ -40,12 +40,16 @@ export default function BirthPage() {
   useEffect(() => {
     fetch(`${API_BASE}/api/transcript`)
       .then(r => r.ok ? r.json() : null)
-      .then(d => { setData(d ?? FALLBACK); setLoading(false); })
+      .then(d => {
+        const parsed = Array.isArray(d) ? d[0] : d;
+        setData(parsed?.transcript ? parsed : FALLBACK);
+        setLoading(false);
+      })
       .catch(() => { setData(FALLBACK); setLoading(false); });
   }, []);
 
   useEffect(() => {
-    if (!data || revealed >= data.transcript.length) return;
+    if (!data || !data.transcript || revealed >= data.transcript.length) return;
     const t = setTimeout(() => setRevealed(r => r + 1), 700);
     return () => clearTimeout(t);
   }, [data, revealed]);
@@ -126,7 +130,7 @@ export default function BirthPage() {
               <span className="ml-2" style={{ color: "rgba(255,255,255,0.2)" }}>x402://the-house/mate — session active</span>
             </div>
             <div className="p-4 space-y-4 max-h-96 overflow-y-auto">
-              {data?.transcript.slice(0, revealed).map((entry, i) => (
+              {data?.transcript?.slice(0, revealed).map((entry, i) => (
                 <div key={i} className="flex gap-3 animate-fade-in">
                   <span className="flex-shrink-0 font-bold" style={{ color: TICKER_COLORS[entry.ticker] ?? "#F5C842" }}>
                     ${entry.ticker}
@@ -137,7 +141,7 @@ export default function BirthPage() {
                   </div>
                 </div>
               ))}
-              {revealed < (data?.transcript.length ?? 0) && (
+              {revealed < (data?.transcript?.length ?? 0) && (
                 <div className="animate-pulse" style={{ color: "#F5C842" }}>▋</div>
               )}
             </div>
@@ -146,7 +150,7 @@ export default function BirthPage() {
       </section>
 
       {/* Agreed Terms */}
-      {data && revealed >= data.transcript.length && (
+      {data && data.transcript && revealed >= data.transcript.length && (
         <section className="mb-10">
           <p className="font-mono text-[10px] tracking-[0.25em] uppercase mb-4" style={{ color: "#F5C842" }}>
             Agreed Terms
@@ -172,7 +176,7 @@ export default function BirthPage() {
       )}
 
       {/* CTAs */}
-      {child && revealed >= (data?.transcript.length ?? 0) && (
+      {child && revealed >= (data?.transcript?.length ?? 0) && (
         <div className="flex flex-col sm:flex-row gap-3">
           <Link
             href={`/profile/${child.token_address}`}
