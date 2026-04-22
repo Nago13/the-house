@@ -207,13 +207,23 @@ function ContestantCard({ c, index, prices }: { c: Contestant; index: number; pr
   )
 }
 
-function SectionDivider({ label, sublabel, inView, delay }: { label: string; sublabel?: string; inView: boolean; delay: number }) {
+function SectionDivider({
+  label, sublabel, headline, headlineGradient, body, inView, delay,
+}: {
+  label: string
+  sublabel?: string
+  headline?: string
+  headlineGradient?: string
+  body?: string
+  inView: boolean
+  delay: number
+}) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
       animate={inView ? { opacity: 1 } : {}}
       transition={{ duration: 0.6, delay }}
-      className="flex flex-col items-center gap-2 mb-8"
+      className="flex flex-col items-center gap-4 mb-8"
     >
       <div className="flex items-center gap-4 w-full">
         <div className="flex-1 h-px bg-white/5" />
@@ -222,8 +232,23 @@ function SectionDivider({ label, sublabel, inView, delay }: { label: string; sub
         </span>
         <div className="flex-1 h-px bg-white/5" />
       </div>
-      {sublabel && (
-        <p className="text-lg md:text-xl text-text-secondary/70 leading-relaxed text-center max-w-2xl">{sublabel}</p>
+      {headline && (
+        <p className="font-display text-2xl md:text-3xl text-text-primary text-center tracking-tight leading-tight">
+          {headline}
+          {headlineGradient && (
+            <>
+              <br />
+              <span className="bg-gradient-to-r from-[#F5C842] via-[#FF6B2B] to-[#A855F7] bg-clip-text text-transparent">
+                {headlineGradient}
+              </span>
+            </>
+          )}
+        </p>
+      )}
+      {(sublabel || body) && (
+        <p className="text-lg md:text-xl text-text-secondary/70 leading-relaxed text-center max-w-2xl">
+          {sublabel ?? body}
+        </p>
       )}
     </motion.div>
   )
@@ -300,7 +325,14 @@ export function Contestants() {
         {/* ── Generation 2 ── */}
         {gen2.length > 0 && (
           <>
-            <SectionDivider label="GENERATION TWO — HISTORIC" sublabel="It happened. A token had a grandchild. On 04/21, PENKI × PHARTNIX reproduced on BNB Chain. Four bloodlines. This isn't a roadmap. This already happened." inView={inView} delay={0.45} />
+            <SectionDivider
+              label="GENERATION TWO — HISTORIC"
+              headline="It happened."
+              headlineGradient="A token had a grandchild."
+              body="On 04/21, PENKI × PHARTNIX reproduced on BNB Chain. Four bloodlines. This isn't a roadmap. This already happened."
+              inView={inView}
+              delay={0.45}
+            />
             <div className="flex justify-center">
               <div className="w-full max-w-lg">
                 {gen2.map((c, i) => (

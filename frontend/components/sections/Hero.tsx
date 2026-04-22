@@ -120,14 +120,12 @@ export function Hero() {
           style={{ opacity: c2Opacity, y: c2Y }}
           className="absolute inset-0 z-30 flex flex-col items-center justify-center text-center px-6"
         >
-          <h1 className="font-display text-4xl md:text-6xl lg:text-7xl tracking-tight leading-tight text-text-primary pointer-events-none">
-            Nine tokens entered the house.
-            <br />
-            <span className="bg-gradient-to-r from-[#F5C842] via-[#FF6B2B] to-[#A855F7] bg-clip-text text-transparent">
+          <p className="text-text-secondary text-lg md:text-xl font-light max-w-xl leading-relaxed pointer-events-none">
+            Nine tokens entered the house.{" "}
+            <span className="bg-gradient-to-r from-[#F5C842] via-[#FF6B2B] to-[#A855F7] bg-clip-text text-transparent font-normal">
               Five were born inside.
             </span>
-          </h1>
-          <p className="text-text-secondary text-lg md:text-xl mt-8 font-light max-w-xl leading-relaxed pointer-events-none">
+            <br className="hidden sm:block" />
             One grandchild just learned to speak.
             <br className="hidden sm:block" />
             All on-chain. All live. Watch now.

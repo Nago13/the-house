@@ -93,9 +93,9 @@ export function FinalCTA() {
           className="border-t border-white/5 pt-10 flex flex-col sm:flex-row items-center justify-center gap-8 text-[11px] tracking-[0.2em] uppercase text-text-secondary/50"
         >
           <span>Built for Four.meme AI Sprint</span>
-          <span className="hidden sm:block w-px h-3 bg-text-secondary/20" />
+          <span className="opacity-30">·</span>
           <span>April 2026</span>
-          <span className="hidden sm:block w-px h-3 bg-text-secondary/20" />
+          <span className="opacity-30">·</span>
           <span>Powered by Claude API</span>
         </motion.div>
       </div>
