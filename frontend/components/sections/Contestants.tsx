@@ -234,9 +234,14 @@ export function Contestants() {
   const inView = useInView(ref, { once: true, margin: "-100px" })
   const prices = usePrices()
 
-  const founders = contestants.filter((c) => c.generation === 0)
-  const gen1     = contestants.filter((c) => c.generation === 1)
-  const gen2     = contestants.filter((c) => c.generation === 2)
+  const GEN0_ORDER = ["SHIB","DOGE","PEPE","MOM","DAD","FLOKI","PENGU","FARTCOIN","PHNIX"]
+  const gen0raw = contestants.filter((c) => c.generation === 0)
+  const founders = [
+    ...GEN0_ORDER.map((t) => gen0raw.find((c) => c.ticker === t)).filter(Boolean),
+    ...gen0raw.filter((c) => !GEN0_ORDER.includes(c.ticker)),
+  ] as typeof contestants
+  const gen1 = contestants.filter((c) => c.generation === 1)
+  const gen2 = contestants.filter((c) => c.generation === 2)
 
   return (
     <section
@@ -272,11 +277,11 @@ export function Contestants() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-text-secondary text-center mb-16 max-w-lg mx-auto"
         >
-          Two tokens. Real personalities. Real memories. They already know each other.
+          10 founders. 4 children. 1 grandchild. The dynasties are forming.
         </motion.p>
 
         {/* ── Generation 0: Founders ── */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-12">
           {founders.map((c, i) => (
             <ContestantCard key={c.token_address} c={c} index={i} prices={prices} />
           ))}
