@@ -500,23 +500,14 @@ function BabyNode() {
   return <mesh ref={meshRef} position={[0, 0, 0]} geometry={geo} material={mat} />
 }
 
-// ── Scene — magnetic tilt wrapper + scroll-driven camera ───────────────────────
+// ── Scene — scroll-driven camera ──────────────────────────────────────────────
 function Scene() {
-  const outerRef = useRef<THREE.Group>(null)  // magnetic tilt
-  const innerRef = useRef<THREE.Group>(null)  // base rotation + breathing
+  const innerRef = useRef<THREE.Group>(null)
 
   useFrame((state) => {
     const hero   = useScrollStore.getState().heroProgress
     const global = useScrollStore.getState().globalProgress
     const t      = state.clock.elapsedTime
-
-    // Magnetic tilt — organism leans toward viewer
-    if (outerRef.current) {
-      const tx = -sharedPointerPos.y * 0.06
-      const ty =  sharedPointerPos.x * 0.06
-      outerRef.current.rotation.x += (tx - outerRef.current.rotation.x) * 0.022
-      outerRef.current.rotation.y += (ty - outerRef.current.rotation.y) * 0.022
-    }
 
     // Base rotation + breathing
     if (innerRef.current) {
@@ -525,7 +516,7 @@ function Scene() {
       innerRef.current.scale.set(s, s, s)
     }
 
-    // Global scroll camera path — starts close, pulls back as you explore the page
+    // Global scroll camera path
     const camZ = 2.8 + global * 4.5
     const camX = Math.sin(global * Math.PI * 0.6) * 0.6
     const camY = -global * 0.5
@@ -536,13 +527,11 @@ function Scene() {
   })
 
   return (
-    <group ref={outerRef}>
-      <group ref={innerRef}>
-        <NeuralCore />
-        <LineageEdges />
-        <OrbitingParticles />
-        <BabyNode />
-      </group>
+    <group ref={innerRef}>
+      <NeuralCore />
+      <LineageEdges />
+      <OrbitingParticles />
+      <BabyNode />
     </group>
   )
 }
@@ -562,7 +551,6 @@ export function HeroScene() {
       frameloop="always"
     >
       <RendererSetup />
-      <PointerTracker />
 
       <ambientLight intensity={0.4} />
       <pointLight position={[4,  4,  3]}  color="#F5C842" intensity={2.0} />
