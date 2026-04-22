@@ -31,15 +31,21 @@ claude = Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
 
 MATE_SECRET = os.getenv("MATE_SECRET", "the-house-demo")
 
-# Addresses with live chat enabled (lowercase)
-CHAT_ENABLED = {
-    "0x2a9796be8c555558d10079e53fb35a2e5da6a317",  # MOM
-    "0x74a69d5999da4f187c3d318c1850081e76cfa849",  # DAD
-    "0xb203132692e11536863fad7e650c17e2f0a317e9",  # GNSP
-    "0xba2ae424d960c26247dd6c32edc70b295c744c43",  # DOGE
-    "0x2859e4544c4bb03966803b044a93563bd2d0dd4d",  # SHIB
-    "0x6b94fb6591141ff8ba29654644f6b35f94ae06d5",  # PHNIX
-}
+
+def _build_chat_enabled() -> set[str]:
+    """Load all contestant addresses from contestants.json — all are chat-enabled."""
+    path = CONTENT_DIR / "contestants.json"
+    if not path.exists():
+        return set()
+    data = json.loads(path.read_text(encoding="utf-8"))
+    return {
+        c["token_address"].lower()
+        for c in data
+        if c.get("token_address") and c["token_address"] != "DEPLOY_PENDING"
+    }
+
+
+CHAT_ENABLED = _build_chat_enabled()
 
 # Per-character personality injections appended to the base system prompt
 _PERSONALITY_INJECTIONS: dict[str, str] = {
