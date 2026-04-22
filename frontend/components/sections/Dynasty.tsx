@@ -54,8 +54,7 @@ export function Dynasty() {
           className="text-text-secondary text-center mb-16 max-w-md mx-auto"
         >
           Every birth is permanent. Every bloodline is public.
-          This is what three nodes look like.
-          Imagine month six.
+          This is one bloodline. There are four more like it.
         </motion.p>
 
         {/* Tree SVG */}
