@@ -28,33 +28,6 @@ function RendererSetup() {
   return null
 }
 
-// ── PointerTracker — listens on window so it works behind pointer-events:none ──
-function PointerTracker() {
-  const { camera, raycaster } = useThree()
-  const ndc   = useRef(new THREE.Vector2())
-  const plane = useRef(new THREE.Plane(new THREE.Vector3(0, 0, 1), 0))
-  const hit   = useRef(new THREE.Vector3())
-
-  useEffect(() => {
-    const onMove = (e: MouseEvent) => {
-      ndc.current.set(
-        (e.clientX / window.innerWidth)  *  2 - 1,
-        -(e.clientY / window.innerHeight) * 2 + 1,
-      )
-    }
-    window.addEventListener("mousemove", onMove)
-    return () => window.removeEventListener("mousemove", onMove)
-  }, [])
-
-  useFrame(() => {
-    raycaster.setFromCamera(ndc.current, camera)
-    if (raycaster.ray.intersectPlane(plane.current, hit.current)) {
-      sharedPointerPos.copy(hit.current)
-    }
-  })
-
-  return null
-}
 
 // ── CosmicField — 4 000-point twinkling nebula shader ─────────────────────────
 function CosmicField() {
