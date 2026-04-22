@@ -2,6 +2,7 @@
 
 import { useRef } from "react"
 import { motion, useScroll, useTransform, useMotionValueEvent } from "motion/react"
+import Link from "next/link"
 import { useScrollStore } from "@/lib/scroll-store"
 
 const PARTICLES = [
@@ -164,33 +165,33 @@ export function Hero() {
           style={{ opacity: c3Opacity, y: c3Y }}
           className="absolute inset-0 z-30 flex flex-col items-center justify-center text-center px-6"
         >
-          <p className="text-[11px] tracking-[0.35em] uppercase text-[#F59E0B] mb-6">
-            Born · Block #39,482,291
-          </p>
-          <h1 className="font-display text-4xl md:text-6xl lg:text-7xl tracking-tight leading-tight text-text-primary mb-4 drop-shadow-[0_2px_30px_rgba(52,211,153,0.2)]">
-            Their child is real.
+          <h1 className="font-display text-4xl md:text-6xl lg:text-7xl tracking-tight leading-tight text-text-primary mb-10">
+            Two tokens f*cked. A grandchild walked out.
             <br />
-            <span className="text-[#F59E0B]">You can own it.</span>
+            <span className="bg-gradient-to-r from-[#F5C842] via-[#FF6B2B] to-[#A855F7] bg-clip-text text-transparent">
+              Four wallets woke up richer.
+            </span>
           </h1>
-          <p className="text-text-secondary text-lg md:text-xl mb-10 font-light">
-            Deployed on BNB Chain. Trading now.
-          </p>
 
           <div className="flex flex-col sm:flex-row items-center gap-4">
-            <motion.button
-              whileHover={{ scale: 1.04 }}
-              whileTap={{ scale: 0.97 }}
-              className="bg-gradient-to-r from-[#F5C842] to-[#A855F7] text-obsidian font-medium px-10 py-4 rounded-full shadow-[0_0_50px_-10px_#F5C842] hover:shadow-[0_0_70px_-5px_#A855F7] transition-shadow text-base"
-            >
-              Enter The House
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.04 }}
-              whileTap={{ scale: 0.97 }}
-              className="bg-black/30 backdrop-blur-md border border-white/10 text-text-primary px-10 py-4 rounded-full hover:border-[#F59E0B] hover:text-[#F59E0B] transition-colors text-base"
-            >
-              Watch It Happen
-            </motion.button>
+            <Link href="/profile/0x2b065F3E892Da24367De75b3c05bb47Aeac50c81">
+              <motion.div
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.97 }}
+                className="bg-gradient-to-r from-[#F5C842] to-[#A855F7] text-obsidian font-medium px-10 py-4 rounded-full shadow-[0_0_50px_-10px_#F5C842] hover:shadow-[0_0_70px_-5px_#A855F7] transition-shadow text-base cursor-pointer"
+              >
+                Meet PHARKI
+              </motion.div>
+            </Link>
+            <Link href="/tree">
+              <motion.div
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.97 }}
+                className="bg-black/30 backdrop-blur-md border border-white/10 text-text-primary px-10 py-4 rounded-full hover:border-[#F59E0B] hover:text-[#F59E0B] transition-colors text-base cursor-pointer"
+              >
+                View the bloodline
+              </motion.div>
+            </Link>
           </div>
         </motion.div>
 
