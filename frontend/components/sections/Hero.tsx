@@ -132,13 +132,16 @@ export function Hero() {
           style={{ opacity: c3Opacity, y: c3Y }}
           className="absolute inset-0 z-30 flex flex-col items-center justify-center text-center px-6"
         >
-          <h1 className="font-display text-4xl md:text-6xl lg:text-7xl tracking-tight leading-tight text-text-primary mb-4 drop-shadow-[0_2px_30px_rgba(245,158,11,0.2)]">
+          <p className="text-[11px] tracking-[0.35em] uppercase text-[#F59E0B] mb-6">
+            Born · Block #39,482,291
+          </p>
+          <h1 className="font-display text-4xl md:text-6xl lg:text-7xl tracking-tight leading-tight text-text-primary mb-4 drop-shadow-[0_2px_30px_rgba(52,211,153,0.2)]">
             Their child is real.
             <br />
             <span className="text-[#F59E0B]">You can own it.</span>
           </h1>
           <p className="text-text-secondary text-lg md:text-xl mb-10 font-light">
-            Live on BSC Testnet.
+            Deployed on BNB Chain. Trading now.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center gap-4">
