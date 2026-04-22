@@ -11,7 +11,6 @@ const NAV_LINKS = [
 ];
 
 const GOLD   = "#F5C842";
-const VIOLET = "#A855F7";
 
 export default function Nav() {
   const path = usePathname();
