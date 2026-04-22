@@ -14,15 +14,15 @@ export default function Home() {
       <GlobalCanvas />
       <GlobalScrollTracker />
 
-      {/* Pull up to cover nav offset, then stack sections over the living organism */}
-      <div style={{ position: "relative", zIndex: 1, marginTop: "-3.5rem" }}>
+      {/* Page content scrolls over the living organism */}
+      <main style={{ position: "relative", zIndex: 1 }}>
         <Hero />
         <Thesis />
         <Contestants />
         <HowItWorks />
         <Dynasty />
         <FinalCTA />
-      </div>
+      </main>
     </>
   )
 }

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client"
 
 import { useRef, useMemo, useState, useEffect } from "react"
@@ -158,6 +157,7 @@ function quadBezier(
 function NeuralCore() {
   const hoveredNode   = useRef(-1)
   const nodeMeshRefs  = useRef<(THREE.Mesh | null)[]>([])
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const connLineRefs  = useRef<any[]>([])
   const tmpVec        = useMemo(() => new THREE.Vector3(), [])
 
@@ -255,6 +255,7 @@ function NeuralCore() {
       {connections.map(({ a, b }, i) => (
         <Line
           key={`s${i}`}
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           ref={(el: any) => { connLineRefs.current[i] = el }}
           points={[a, b]}
           color="#FF6B2B"
@@ -273,6 +274,7 @@ function LineageEdges() {
   const wasHovered      = useRef(-1)
   const [labelIdx, setLabelIdx] = useState(-1)
   const terminalMeshRefs = useRef<(THREE.Mesh | null)[]>([])
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const edgeLineRefs     = useRef<any[]>([])
   const tmpVec           = useMemo(() => new THREE.Vector3(), [])
 
@@ -356,6 +358,7 @@ function LineageEdges() {
       {edges.map(({ points, end }, i) => (
         <group key={i}>
           <Line
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             ref={(el: any) => { edgeLineRefs.current[i] = el }}
             points={points}
             color="#F59E0B"
