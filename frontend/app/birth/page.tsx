@@ -64,8 +64,8 @@ export default function BirthPage() {
         </p>
         <h1 className="font-display text-5xl text-white mb-3 tracking-tight">First Birth</h1>
         <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.4)" }}>
-          On-chain mating event between $MOM and $DAD. Negotiated via x402 protocol.
-          Child token deployed to BNB testnet.
+          $MOM and $DAD hooked up on-chain. Here&apos;s the receipt.
+          Negotiated via x402 protocol. Child token deployed to BNB testnet.
         </p>
       </div>
 

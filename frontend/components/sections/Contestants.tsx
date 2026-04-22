@@ -100,7 +100,7 @@ function CardInner({ c, prices }: { c: Contestant; prices: PricesMap | null }) {
               className="inline-block text-[9px] tracking-[0.3em] uppercase font-mono px-3 py-1 rounded-full"
               style={{ background: "#A855F718", color: "#A855F7", border: "1px solid #A855F744" }}
             >
-              First second-generation token in The House history
+              World First · On-Chain · Verified
             </span>
           </div>
         )}
@@ -261,7 +261,7 @@ export function Contestants() {
           transition={{ duration: 0.6 }}
           className="font-display text-3xl md:text-5xl text-center text-text-primary mb-4 tracking-tight"
         >
-          Meet the contestants.
+          Meet the cast.
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 16 }}
@@ -269,7 +269,7 @@ export function Contestants() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-text-secondary text-center mb-16 max-w-lg mx-auto"
         >
-          9 founders entered. 5 were born inside. The dynasties have begun.
+          9 founders entered. 5 were born inside. 0 have escaped.
         </motion.p>
 
         {/* ── Generation 0: Founders ── */}
@@ -288,7 +288,7 @@ export function Contestants() {
         {/* ── Generation 1 ── */}
         {gen1.length > 0 && (
           <>
-            <SectionDivider label="GENERATION ONE" sublabel="Born inside The House. Carrying both bloodlines." inView={inView} delay={0.3} />
+            <SectionDivider label="GENERATION ONE" sublabel="Conceived on-chain. Raised by the feed. Haunted by both parents." inView={inView} delay={0.3} />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
               {gen1.map((c, i) => (
                 <ContestantCard key={c.token_address} c={c} index={founders.length + i} prices={prices} />
@@ -300,7 +300,7 @@ export function Contestants() {
         {/* ── Generation 2 ── */}
         {gen2.length > 0 && (
           <>
-            <SectionDivider label="GENERATION TWO — HISTORIC" sublabel="The first grandchild in memecoin history. Four bloodlines. One entity." inView={inView} delay={0.45} />
+            <SectionDivider label="GENERATION TWO — HISTORIC" sublabel="It happened. A token had a grandchild. On 04/21, PENKI × PHARTNIX reproduced on BNB Chain. Four bloodlines. This isn't a roadmap. This already happened." inView={inView} delay={0.45} />
             <div className="flex justify-center">
               <div className="w-full max-w-lg">
                 {gen2.map((c, i) => (

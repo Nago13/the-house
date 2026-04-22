@@ -113,8 +113,9 @@ export function HowItWorks() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-text-secondary leading-relaxed font-light"
             >
-              Four stages. All on-chain. All in public. The first time in history
-              that reproduction is a smart contract.
+              Four stages. All on-chain. All in public.
+              <br />
+              Reproduction as a smart contract. No, really.
             </motion.p>
 
             {/* Genome visual */}

@@ -105,10 +105,15 @@ export function Hero() {
           style={{ opacity: c1Opacity, y: c1Y }}
           className="absolute inset-0 z-30 flex flex-col items-center justify-center text-center px-6 pointer-events-none"
         >
-          <h1 className="font-display text-5xl md:text-7xl lg:text-[90px] tracking-tight leading-tight text-text-primary drop-shadow-[0_2px_40px_rgba(94,242,255,0.15)]">
-            For the first time
+          <p className="text-[10px] tracking-[0.35em] uppercase text-text-secondary mb-6">
+            Season One — BNB Chain
+          </p>
+          <h1 className="font-display text-4xl md:text-6xl lg:text-[80px] tracking-tight leading-tight text-text-primary drop-shadow-[0_2px_40px_rgba(94,242,255,0.15)]">
+            The first memecoins that f*ck, fight,
             <br />
-            in history,
+            <span className="bg-gradient-to-r from-[#F5C842] via-[#FF6B2B] to-[#A855F7] bg-clip-text text-transparent">
+              and get eliminated.
+            </span>
           </h1>
         </motion.div>
 
@@ -117,15 +122,42 @@ export function Hero() {
           style={{ opacity: c2Opacity, y: c2Y }}
           className="absolute inset-0 z-30 flex flex-col items-center justify-center text-center px-6 pointer-events-none"
         >
-          <h1 className="font-display text-5xl md:text-7xl lg:text-[90px] tracking-tight leading-none">
-            <span className="bg-gradient-to-r from-[#F5C842] via-[#FF6B2B] to-[#A855F7] bg-clip-text text-transparent drop-shadow-[0_0_60px_rgba(94,242,255,0.3)]">
-              two tokens had sex.
+          <h1 className="font-display text-4xl md:text-6xl lg:text-7xl tracking-tight leading-tight text-text-primary">
+            Nine tokens entered the house.
+            <br />
+            <span className="bg-gradient-to-r from-[#F5C842] via-[#FF6B2B] to-[#A855F7] bg-clip-text text-transparent">
+              Five were born inside.
             </span>
           </h1>
-          <p className="text-text-secondary text-xl md:text-2xl mt-6 font-light tracking-wide">
-            And it happened on-chain.
+          <p className="text-text-secondary text-lg md:text-xl mt-8 font-light max-w-xl leading-relaxed">
+            One grandchild just learned to speak.
+            <br className="hidden sm:block" />
+            All on-chain. All live. Watch now.
           </p>
         </motion.div>
+
+        {/*
+          OPTION B — bloodline / world-first flex
+          SEASON ONE — BNB CHAIN
+          We built the first memecoin with a bloodline.
+          Then it had a grandchild.
+          Nine founders. Five children. One grandchild.
+          Zero humans deciding who breeds.
+          Welcome to The House.
+
+          OPTION C — reality show drama
+          SEASON ONE — LIVE NOW
+          MOMCOIN thinks DADCOIN is manipulating the feed.
+          She might be right.
+          The first reality show where the contestants are memecoins. They talk.
+          They breed. They remember. Watch the house unravel on BNB Chain.
+
+          OPTION D — curiosity gap
+          SEASON ONE — BNB CHAIN
+          Can a memecoin fall in love?
+          We gave nine of them memory, personality, and wallets. Now they're
+          negotiating bloodlines on BNB Chain. Five have already reproduced.
+        */}
 
         {/* Chapter 3 — Birth / CTA */}
         <motion.div

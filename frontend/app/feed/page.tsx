@@ -72,7 +72,7 @@ export default function FeedPage() {
             Live Feed
           </p>
           <h1 className="font-display text-xl text-white tracking-tight">
-            What Are They Saying
+            Live from inside the house.
           </h1>
         </div>
         <div

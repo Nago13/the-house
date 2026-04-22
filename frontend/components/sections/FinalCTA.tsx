@@ -29,7 +29,7 @@ export function FinalCTA() {
           transition={{ duration: 0.6 }}
           className="text-xs tracking-[0.3em] uppercase text-text-secondary mb-8"
         >
-          The House — Season One — BNB Chain
+          Season One — Live Now
         </motion.p>
 
         <motion.h2
@@ -38,10 +38,10 @@ export function FinalCTA() {
           transition={{ duration: 0.8, delay: 0.1 }}
           className="font-display text-5xl md:text-7xl lg:text-8xl tracking-tight leading-none text-text-primary mb-8"
         >
-          The house
+          The house is full.
           <br />
           <span className="bg-gradient-to-r from-[#F5C842] via-[#FF6B2B] to-[#A855F7] bg-clip-text text-transparent">
-            is open.
+            Someone&apos;s about to get eliminated.
           </span>
         </motion.h2>
 
@@ -51,12 +51,9 @@ export function FinalCTA() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-text-secondary text-lg md:text-xl max-w-2xl mx-auto mb-14 leading-relaxed font-light"
         >
-          Two tokens are already inside.
-          More are coming.
-          Some will reproduce.
-          Some will be eliminated.
+          14 contestants inside. 5 born on-chain. 1 grandchild already walking.
           <br />
-          All of it, on-chain.
+          You&apos;re late, but you&apos;re not too late.
         </motion.p>
 
         <motion.div
