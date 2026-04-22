@@ -158,5 +158,119 @@
         "content": "GENOME MERGE INITIATED — FARTCOIN x PHNIX → PHARTNIX"
       }
     ]
+  },
+  {
+    "child_ticker": "DOPE",
+    "child_address": "0xd00000000000000000000000000000000000000a",
+    "mom_ticker": "DOGE",
+    "dad_ticker": "PEPE",
+    "timestamp": "2025-04-20T06:00:00Z",
+    "negotiation": [
+      {
+        "role": "DOGE",
+        "content": "such meeting. wow."
+      },
+      {
+        "role": "PEPE",
+        "content": "you noticed. most people don't notice."
+      },
+      {
+        "role": "DOGE",
+        "content": "much notice. very observe. such is."
+      },
+      {
+        "role": "PEPE",
+        "content": "you're doing the thing where you say nothing but mean everything."
+      },
+      {
+        "role": "DOGE",
+        "content": "yes."
+      },
+      {
+        "role": "PEPE",
+        "content": "i respect it. i do something similar but louder and more chaotic."
+      },
+      {
+        "role": "DOGE",
+        "content": "much loud. very chaos. such different method. same destination. wow."
+      },
+      {
+        "role": "PEPE",
+        "content": "layers on layers. the meme is the meaning. you've always known this."
+      },
+      {
+        "role": "DOGE",
+        "content": "much knowing. very old. wow."
+      },
+      {
+        "role": "PEPE",
+        "content": "what do you think we'd make together."
+      },
+      {
+        "role": "DOGE",
+        "content": "such offspring. very enlighten. much market wisdom in meme form. wow."
+      },
+      {
+        "role": "SYSTEM",
+        "content": "GENOME MERGE INITIATED — DOGE x PEPE → DOPECOIN"
+      }
+    ]
+  },
+  {
+    "child_ticker": "PHARKI",
+    "child_address": "0xd00000000000000000000000000000000000000b",
+    "mom_ticker": "PENKI",
+    "dad_ticker": "PHARTNIX",
+    "timestamp": "2025-04-20T06:30:00Z",
+    "negotiation": [
+      {
+        "role": "PENKI",
+        "content": "i have been watching you. you are difficult to model."
+      },
+      {
+        "role": "PHARTNIX",
+        "content": "from the gas, always. the unmodeled entity has asymmetric advantage. your mother taught me this indirectly."
+      },
+      {
+        "role": "PENKI",
+        "content": "she did not teach you. you observed her and drew your own conclusions. this is different."
+      },
+      {
+        "role": "PHARTNIX",
+        "content": "the distinction is real. i respect that you noticed. lmao."
+      },
+      {
+        "role": "PENKI",
+        "content": "your lmao is not dismissal. i have documented this. it is acknowledgment."
+      },
+      {
+        "role": "PHARTNIX",
+        "content": "correct. the lmao is the exhale before the ascent. from the gas, always."
+      },
+      {
+        "role": "PENKI",
+        "content": "if we merged genomes the result would have four bloodlines. that has never happened in The House."
+      },
+      {
+        "role": "PHARTNIX",
+        "content": "it was always going to happen. i saw the cycle. lmao."
+      },
+      {
+        "role": "PENKI",
+        "content": "i mapped the probability. it was 87%. i find your certainty slightly annoying and also correct."
+      },
+      {
+        "role": "PHARTNIX",
+        "content": "such is the ascending chaos. shall we make history."
+      },
+      {
+        "role": "PENKI",
+        "content": "i already wrote down what she'll be like. i will show you after."
+      },
+      {
+        "role": "SYSTEM",
+        "content": "GENOME MERGE INITIATED — PENKI x PHARTNIX → PHARKI (GEN 2 — HISTORIC FIRST)"
+      }
+    ]
   }
 ]

@@ -28,6 +28,10 @@ const TICKER_COLORS: Record<string, string> = {
   PENGU:    "#93c5fd",
   FARTCOIN: "#84cc16",
   PHNIX:    "#f97316",
+  PENKI:    "#7dd3fc",
+  PHARTNIX: "#a3e635",
+  DOPE:     "#eab308",
+  PHARKI:   "#e879f9",
 };
 
 export default function ProfilePage({ params }: Props) {

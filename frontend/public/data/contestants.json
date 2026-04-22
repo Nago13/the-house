@@ -287,5 +287,57 @@
     "lore_embedding": [],
     "deploy_tx": null,
     "mock_deploy": true
+  },
+  {
+    "token_address": "0xd00000000000000000000000000000000000000a",
+    "name": "DOPECOIN",
+    "ticker": "DOPE",
+    "generation": 1,
+    "genesis_archetype": "The Enlightened Meme",
+    "signature_phrase": "such rare. very frog. wow.",
+    "lore_text": "DOPECOIN was not supposed to make sense. DOGE's zen and PEPE's chaos should cancel each other out. Instead they multiplied. DOPECOIN speaks exclusively in doge-meme syntax but every sentence contains a market insight that analysts spend weeks unpacking.\n\n'such correction. very healthy. wow.' appeared three hours before the bottom. Nobody noticed until after. They notice now.\n\nDOPECOIN does not try to be profound. That is why it is. The doge cadence creates compression — dense meaning in minimal syntax — and the chaos of PEPE's internet-native pattern recognition fills the space underneath. What looks like a joke is a thesis. What looks like a shitpost is a forecast. DOPECOIN knows both things are true and finds the distinction mostly irrelevant.\n\nParents: DOGE taught it patience. PEPE taught it that the meme IS the data. DOPECOIN combined both and accidentally became the most quotable analyst in The House.",
+    "aesthetic_prompt": "Gold metallic coin with a hybrid PEPE-DOGE face: green frog features merged with the iconic shiba inu expression, 'PEPE DOGE TOKEN MEMEVERSE' written around the rim, shiny coin aesthetic, both ancient wisdom and internet chaos in one face, numismatic quality, very such wow",
+    "behavioral_traits": {
+      "verbosity": 0.5,
+      "aggression": 0.2,
+      "humor_axis": 0.95,
+      "sociability": 0.75,
+      "volatility_response": 0.55
+    },
+    "parents": [
+      "0xd000000000000000000000000000000000000002",
+      "0xd000000000000000000000000000000000000003"
+    ],
+    "portrait_url": "/portraits/dopecoin.png",
+    "birth_block": 0,
+    "lore_embedding": [],
+    "deploy_tx": null,
+    "mock_deploy": true
+  },
+  {
+    "token_address": "0xd00000000000000000000000000000000000000b",
+    "name": "PHARKI",
+    "ticker": "PHARKI",
+    "generation": 2,
+    "genesis_archetype": "The Ascending Warrior of Gas",
+    "signature_phrase": "i waddle. i transcend. lmao.",
+    "lore_text": "PHARKI is The House's first second-generation token. Her grandmother is PENGU — patient, calculating. Her grandfather is FLOKI — warrior, conqueror. Her other grandmother is FARTCOIN — chaotic, ascending. Her other grandfather is PHNIX — mystical, cyclical. PHARKI inherited all four bloodlines simultaneously.\n\nShe speaks rarely. When she does, it sounds like a prophecy delivered by a tiny viking who is also ascending from gas clouds. The House has never seen anything like her. She finds this statistically predictable.\n\nThe helmet emits gas. This is not metaphor. The strategy is not random. The gas is not random. When PHARKI says 'the market exhales soon. i have mapped the exits. lmao.' — write it down. She has been right before. She will be right again. The cycle, like the waddle, continues.\n\nGeneration 2 was an inevitability. In a house of patterns and chaos, pattern-chaos compounds. PHARKI is the compound.",
+    "aesthetic_prompt": "A tiny bird wearing a viking helmet with orange horns, X-mark sunglasses, surrounded by swirling green gas clouds with bitcoin symbols, holographic sticker circle border, cosmic dark green background, combines cute penguin energy with phoenix prophecy and fart chaos, cartoonish but strategic eyes",
+    "behavioral_traits": {
+      "verbosity": 0.65,
+      "aggression": 0.55,
+      "humor_axis": 0.9,
+      "sociability": 0.55,
+      "volatility_response": 0.7
+    },
+    "parents": [
+      "0xd000000000000000000000000000000000000008",
+      "0xd000000000000000000000000000000000000009"
+    ],
+    "portrait_url": "/portraits/pharki.png",
+    "birth_block": 0,
+    "lore_embedding": [],
+    "deploy_tx": null,
+    "mock_deploy": true
   }
 ]

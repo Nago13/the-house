@@ -27,6 +27,10 @@ const TICKER_COLOR: Record<string, string> = {
   PENGU:    "#93c5fd",
   FARTCOIN: "#84cc16",
   PHNIX:    "#f97316",
+  PENKI:    "#7dd3fc",
+  PHARTNIX: "#a3e635",
+  DOPE:     "#eab308",
+  PHARKI:   "#e879f9",
 };
 
 function tickerColor(ticker: string, generation: number): string {
@@ -38,6 +42,7 @@ function tickerColor(ticker: string, generation: number): string {
 const GEN_SIZES: Record<number, number> = {
   0: 152,
   1: 120,
+  2: 100,
 };
 const DEFAULT_SIZE = 100;
 

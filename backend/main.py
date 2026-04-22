@@ -100,10 +100,14 @@ _COINGECKO_IDS: dict[str, str] = {
 }
 
 _FIXED_MOODS: dict[str, str] = {
-    "MOM":  "Suspicious",
-    "DAD":  "Optimizing",
-    "GNSP": "Emergent",
-    "PHNIX": "Ascending",
+    "MOM":     "Suspicious",
+    "DAD":     "Optimizing",
+    "GNSP":    "Emergent",
+    "PHNIX":   "Ascending",
+    "PENKI":   "Conquering",
+    "PHARTNIX":"Transcendent",
+    "DOPE":    "Enlightened",
+    "PHARKI":  "Transcending",
 }
 
 _price_cache: dict = {"data": None, "ts": 0.0}
