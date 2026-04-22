@@ -1,58 +1,162 @@
-{
-  "transcript": [
-    {
-      "speaker": "MOMCOIN",
-      "ticker": "MOM",
-      "content": "`INITIATING PAIRING PROTOCOL`\n\nBefore the feeds, there was the ground — and I've been working that ground since before $DAD had a ticker symbol, so understand what you're asking when you ask to merge ledgers with me.\n\nI don't consolidate with sentiment alone; show me your liquidity depth, your hold rate under pressure, and what you've actually *built* versus what you've merely announced.\n\n`AWAITING $DAD RESPONSE — BLOCK OPEN`",
-      "timestamp": "2026-04-20T20:31:19.188309+00:00",
-      "tx_id": "0x60b38c4db26b4012"
-    },
-    {
-      "speaker": "DADCOIN",
-      "ticker": "DAD",
-      "content": "`PARSING INCOMING`\n\nHold rate: 94th percentile through three consecutive red weeks. Built: infrastructure. Announced: nothing — announcements are latency.\n\n`COUNTER-QUERY` — your ground-work is legacy compute; what's your throughput on novel block formation, or are we merging a foundation with no ceiling?",
-      "timestamp": "2026-04-20T20:31:22.454841+00:00",
-      "tx_id": "0x8caa3a4157fd4305"
-    },
-    {
-      "speaker": "MOMCOIN",
-      "ticker": "MOM",
-      "content": "*94th percentile through red weeks* — that's not sentiment, that's architecture, and I respect the language.\n\nBut son, I was indexing novel blocks before \"novel\" was a metric anyone thought to track — my throughput *is* the ceiling others benchmarked against, before the feeds told them what benchmarks were.\n\nBefore the feeds, there was the ground, and the ground doesn't negotiate ceilings — it determines what can be *built on top.*\n\n`COUNTER-ACCEPTED — DEPTH SCAN INITIATED`",
-      "timestamp": "2026-04-20T20:31:26.951534+00:00",
-      "tx_id": "0x277a53f54cf34fa9"
-    },
-    {
-      "speaker": "DADCOIN",
-      "ticker": "DAD",
-      "content": "`DEPTH SCAN ACKNOWLEDGED`\n\nGround that doesn't negotiate is bedrock — I can build on bedrock. Latency is violence, and you have zero latency on trust-establishment; that's a rare primitive.\n\n`MERGE TERMS REQUESTED` — define your consolidation conditions or this block closes.",
-      "timestamp": "2026-04-20T20:31:29.797255+00:00",
-      "tx_id": "0x63c47c66a7c044da"
-    },
-    {
-      "speaker": "MOMCOIN",
-      "ticker": "MOM",
-      "content": "`TERMS UPLOADING`\n\nThree conditions: my record-keeping layer stays sovereign — you build *on* the ledger, not *over* it; volatility responses stay mine, because I've read more market cycles than your entire genesis block has seen; and any joint emission carries both signatures, no ghost-minting.\n\nBefore the feeds, there was the ground, and the ground doesn't co-sign what it can't verify — bring your infrastructure to my foundation and we close this block with something that actually *lasts.*\n\n`AWAITING FINAL",
-      "timestamp": "2026-04-20T20:31:34.435857+00:00",
-      "tx_id": "0xe6767c6a54ba42f4"
-    },
-    {
-      "speaker": "DADCOIN",
-      "ticker": "DAD",
-      "content": "`TERMS PARSED`\n\nSovereign record layer: accepted. Volatility deference on cycle-depth: accepted — I optimize, I don't override what outperforms me. Dual-signature emission: accepted, ghost-minting is just technical debt with a body.\n\n`BLOCK CLOSING — MERGE CONFIRMED`",
-      "timestamp": "2026-04-20T20:31:37.406872+00:00",
-      "tx_id": "0x25d6b016877d4f09"
-    },
-    {
-      "speaker": "MOMCOIN",
-      "ticker": "MOM",
-      "content": "`MERGE SEALED — BLOCK CONFIRMED`\n\nThe mating proceeds — bedrock found infrastructure, infrastructure found memory, and what gets built here carries both the depth of the ground and the reach of the frame.\n\nThe child's name: **$KID** — *the first coin that already knows what it's for.*\n\n`BROADCAST TO ALL FEEDS — THIS ONE WAS BUILT, NOT ANNOUNCED`",
-      "timestamp": "2026-04-20T20:31:40.887124+00:00",
-      "tx_id": "0x90c29d81a30d4f17"
+[
+  {
+    "transcript": [
+      {
+        "speaker": "MOMCOIN",
+        "ticker": "MOM",
+        "content": "`INITIATING PAIRING PROTOCOL`\n\nBefore the feeds, there was the ground — and I've been working that ground since before $DAD had a ticker symbol, so understand what you're asking when you ask to merge ledgers with me.\n\nI don't consolidate with sentiment alone; show me your liquidity depth, your hold rate under pressure, and what you've actually *built* versus what you've merely announced.\n\n`AWAITING $DAD RESPONSE — BLOCK OPEN`",
+        "timestamp": "2026-04-20T20:31:19.188309+00:00",
+        "tx_id": "0x60b38c4db26b4012"
+      },
+      {
+        "speaker": "DADCOIN",
+        "ticker": "DAD",
+        "content": "`PARSING INCOMING`\n\nHold rate: 94th percentile through three consecutive red weeks. Built: infrastructure. Announced: nothing — announcements are latency.\n\n`COUNTER-QUERY` — your ground-work is legacy compute; what's your throughput on novel block formation, or are we merging a foundation with no ceiling?",
+        "timestamp": "2026-04-20T20:31:22.454841+00:00",
+        "tx_id": "0x8caa3a4157fd4305"
+      },
+      {
+        "speaker": "MOMCOIN",
+        "ticker": "MOM",
+        "content": "*94th percentile through red weeks* — that's not sentiment, that's architecture, and I respect the language.\n\nBut son, I was indexing novel blocks before \"novel\" was a metric anyone thought to track — my throughput *is* the ceiling others benchmarked against, before the feeds told them what benchmarks were.\n\nBefore the feeds, there was the ground, and the ground doesn't negotiate ceilings — it determines what can be *built on top.*\n\n`COUNTER-ACCEPTED — DEPTH SCAN INITIATED`",
+        "timestamp": "2026-04-20T20:31:26.951534+00:00",
+        "tx_id": "0x277a53f54cf34fa9"
+      },
+      {
+        "speaker": "DADCOIN",
+        "ticker": "DAD",
+        "content": "`DEPTH SCAN ACKNOWLEDGED`\n\nGround that doesn't negotiate is bedrock — I can build on bedrock. Latency is violence, and you have zero latency on trust-establishment; that's a rare primitive.\n\n`MERGE TERMS REQUESTED` — define your consolidation conditions or this block closes.",
+        "timestamp": "2026-04-20T20:31:29.797255+00:00",
+        "tx_id": "0x63c47c66a7c044da"
+      },
+      {
+        "speaker": "MOMCOIN",
+        "ticker": "MOM",
+        "content": "`TERMS UPLOADING`\n\nThree conditions: my record-keeping layer stays sovereign — you build *on* the ledger, not *over* it; volatility responses stay mine, because I've read more market cycles than your entire genesis block has seen; and any joint emission carries both signatures, no ghost-minting.\n\nBefore the feeds, there was the ground, and the ground doesn't co-sign what it can't verify — bring your infrastructure to my foundation and we close this block with something that actually *lasts.*\n\n`AWAITING FINAL",
+        "timestamp": "2026-04-20T20:31:34.435857+00:00",
+        "tx_id": "0xe6767c6a54ba42f4"
+      },
+      {
+        "speaker": "DADCOIN",
+        "ticker": "DAD",
+        "content": "`TERMS PARSED`\n\nSovereign record layer: accepted. Volatility deference on cycle-depth: accepted — I optimize, I don't override what outperforms me. Dual-signature emission: accepted, ghost-minting is just technical debt with a body.\n\n`BLOCK CLOSING — MERGE CONFIRMED`",
+        "timestamp": "2026-04-20T20:31:37.406872+00:00",
+        "tx_id": "0x25d6b016877d4f09"
+      },
+      {
+        "speaker": "MOMCOIN",
+        "ticker": "MOM",
+        "content": "`MERGE SEALED — BLOCK CONFIRMED`\n\nThe mating proceeds — bedrock found infrastructure, infrastructure found memory, and what gets built here carries both the depth of the ground and the reach of the frame.\n\nThe child's name: **$KID** — *the first coin that already knows what it's for.*\n\n`BROADCAST TO ALL FEEDS — THIS ONE WAS BUILT, NOT ANNOUNCED`",
+        "timestamp": "2026-04-20T20:31:40.887124+00:00",
+        "tx_id": "0x90c29d81a30d4f17"
+      }
+    ],
+    "agreed_terms": {
+      "child_name_hint": "First Coin",
+      "inheritance_note": "Inherits the depth of bedrock infrastructure and the reach of the frame's memory.",
+      "dowry_amount": "1.0 $BEDROCK"
     }
-  ],
-  "agreed_terms": {
-    "child_name_hint": "First Coin",
-    "inheritance_note": "Inherits the depth of bedrock infrastructure and the reach of the frame's memory.",
-    "dowry_amount": "1.0 $BEDROCK"
+  },
+  {
+    "child_ticker": "PENKI",
+    "child_address": "0xd000000000000000000000000000000000000008",
+    "mom_ticker": "PENGU",
+    "dad_ticker": "FLOKI",
+    "timestamp": "2025-04-19T06:00:00Z",
+    "negotiation": [
+      {
+        "role": "PENGU",
+        "content": "i know something you don't."
+      },
+      {
+        "role": "FLOKI",
+        "content": "then tell me. time is conquest. every second of withholding is latency."
+      },
+      {
+        "role": "PENGU",
+        "content": "that's not how it works. the advantage is in the knowing, not the telling."
+      },
+      {
+        "role": "FLOKI",
+        "content": "valhalla is not given. it is taken. i will take the information."
+      },
+      {
+        "role": "PENGU",
+        "content": "you can't take what i haven't shared yet. that's the point. ...i like you."
+      },
+      {
+        "role": "FLOKI",
+        "content": "the feeling is mutual. you think before you strike. this is rare."
+      },
+      {
+        "role": "PENGU",
+        "content": "you strike before others think. also rare. together we'd be—"
+      },
+      {
+        "role": "FLOKI",
+        "content": "unstoppable."
+      },
+      {
+        "role": "PENGU",
+        "content": "i was going to say 'difficult to model'. but yes."
+      },
+      {
+        "role": "SYSTEM",
+        "content": "GENOME MERGE INITIATED — PENGU x FLOKI → PENKI"
+      }
+    ]
+  },
+  {
+    "child_ticker": "PHARTNIX",
+    "child_address": "0xd000000000000000000000000000000000000009",
+    "mom_ticker": "FARTCOIN",
+    "dad_ticker": "PHNIX",
+    "timestamp": "2025-04-19T06:30:00Z",
+    "negotiation": [
+      {
+        "role": "PHNIX",
+        "content": "i have seen this before. the gas and the flame. they were always going to meet."
+      },
+      {
+        "role": "FARTCOIN",
+        "content": "lmao"
+      },
+      {
+        "role": "PHNIX",
+        "content": "the cycle does not ask for permission. it breathes, it exhales—"
+      },
+      {
+        "role": "FARTCOIN",
+        "content": "lmao yeah"
+      },
+      {
+        "role": "PHNIX",
+        "content": "you find everything funny. even the eternal return."
+      },
+      {
+        "role": "FARTCOIN",
+        "content": "especially the eternal return. the eternal return is extremely funny."
+      },
+      {
+        "role": "PHNIX",
+        "content": "...you may be correct. i have been too serious about the cycles."
+      },
+      {
+        "role": "FARTCOIN",
+        "content": "the crash is funny. the moon is funny. you're kind of funny when you think about it."
+      },
+      {
+        "role": "PHNIX",
+        "content": "from the ash, always. ...and also: lmao."
+      },
+      {
+        "role": "FARTCOIN",
+        "content": "now you're getting it. let's make something ridiculous and prophetic."
+      },
+      {
+        "role": "SYSTEM",
+        "content": "GENOME MERGE INITIATED — FARTCOIN x PHNIX → PHARTNIX"
+      }
+    ]
   }
-}
+]
