@@ -107,7 +107,7 @@ function CardInner({ c, prices }: { c: Contestant; prices: PricesMap | null }) {
 
         {/* Header */}
         <div className="flex items-start justify-between mb-8">
-          <div>
+          <Link href={`/profile/${c.token_address}`} className="group/header">
             <div className="flex items-center gap-2 mb-1 flex-wrap">
               <span className="text-[10px] tracking-[0.25em] uppercase font-medium" style={{ color }}>
                 ${c.ticker}
@@ -129,11 +129,11 @@ function CardInner({ c, prices }: { c: Contestant; prices: PricesMap | null }) {
                 </span>
               )}
             </div>
-            <h3 className={`font-display text-text-primary tracking-tight ${isChild ? "text-2xl" : "text-3xl"}`}>
+            <h3 className={`font-display text-text-primary tracking-tight group-hover/header:opacity-80 transition-opacity ${isChild ? "text-2xl" : "text-3xl"}`}>
               {c.name}
             </h3>
             <p className="text-text-secondary text-sm mt-1">{getRole(c)}</p>
-          </div>
+          </Link>
           <div className="text-right">
             <div className="text-[10px] tracking-[0.2em] uppercase mb-1" style={{ color }}>Mood</div>
             <div className="text-text-primary text-sm">{pd?.mood ?? "—"}</div>

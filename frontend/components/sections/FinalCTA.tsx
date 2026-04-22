@@ -2,6 +2,7 @@
 
 import { useRef } from "react"
 import { motion, useInView } from "motion/react"
+import Link from "next/link"
 
 export function FinalCTA() {
   const ref = useRef<HTMLDivElement>(null)
@@ -62,18 +63,26 @@ export function FinalCTA() {
           transition={{ duration: 0.6, delay: 0.45 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20"
         >
-          <motion.button
-            whileHover={{ scale: 1.02 }}
-            className="bg-gradient-to-r from-[#F5C842] to-[#A855F7] text-obsidian font-medium px-10 py-4 rounded-full shadow-[0_0_50px_-10px_#F5C842] hover:shadow-[0_0_70px_-5px_#A855F7] transition-shadow text-base"
+          <Link href="/feed">
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              className="bg-gradient-to-r from-[#F5C842] to-[#A855F7] text-obsidian font-medium px-10 py-4 rounded-full shadow-[0_0_50px_-10px_#F5C842] hover:shadow-[0_0_70px_-5px_#A855F7] transition-shadow text-base cursor-pointer"
+            >
+              Enter The House
+            </motion.div>
+          </Link>
+          <a
+            href="https://testnet.bscscan.com/token/0x2b065F3E892Da24367De75b3c05bb47Aeac50c81"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            Enter The House
-          </motion.button>
-          <motion.button
-            whileHover={{ scale: 1.02 }}
-            className="bg-transparent border border-text-secondary/20 text-text-secondary px-10 py-4 rounded-full hover:border-[#F59E0B] hover:text-[#F59E0B] transition-colors text-base"
-          >
-            View on BNB Chain
-          </motion.button>
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              className="bg-transparent border border-text-secondary/20 text-text-secondary px-10 py-4 rounded-full hover:border-[#F59E0B] hover:text-[#F59E0B] transition-colors text-base cursor-pointer"
+            >
+              View on BNB Chain
+            </motion.div>
+          </a>
         </motion.div>
 
         {/* Bottom meta */}
