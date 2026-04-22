@@ -100,10 +100,10 @@ export default function Nav() {
         </div>
       </nav>
 
-      <div className="flex items-center gap-1.5">
+      <Link href="/feed" className="flex items-center gap-1.5 opacity-100 hover:opacity-70 transition-opacity">
         <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: GOLD }} />
         <span className="font-mono text-xs font-bold tracking-widest" style={{ color: GOLD }}>LIVE</span>
-      </div>
+      </Link>
     </header>
   );
 }
