@@ -255,18 +255,10 @@ export function Contestants() {
       }}
     >
       <div ref={ref} className="relative z-10 max-w-6xl mx-auto">
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-xs tracking-[0.3em] uppercase text-text-secondary text-center mb-4"
-        >
-          Season One Cast
-        </motion.p>
         <motion.h2
           initial={{ opacity: 0, y: 16 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.1 }}
+          transition={{ duration: 0.6 }}
           className="font-display text-3xl md:text-5xl text-center text-text-primary mb-4 tracking-tight"
         >
           Meet the contestants.
@@ -274,13 +266,19 @@ export function Contestants() {
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
           className="text-text-secondary text-center mb-16 max-w-lg mx-auto"
         >
-          10 founders. 4 children. 1 grandchild. The dynasties are forming.
+          9 founders entered. 5 were born inside. The dynasties have begun.
         </motion.p>
 
         {/* ── Generation 0: Founders ── */}
+        <SectionDivider
+          label="THE FOUNDERS"
+          sublabel="They entered The House with nothing but a wallet and a personality."
+          inView={inView}
+          delay={0.2}
+        />
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-12">
           {founders.map((c, i) => (
             <ContestantCard key={c.token_address} c={c} index={i} prices={prices} />
@@ -290,7 +288,7 @@ export function Contestants() {
         {/* ── Generation 1 ── */}
         {gen1.length > 0 && (
           <>
-            <SectionDivider label="Generation 1" sublabel="Born from the founders" inView={inView} delay={0.3} />
+            <SectionDivider label="GENERATION ONE" sublabel="Born inside The House. Carrying both bloodlines." inView={inView} delay={0.3} />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
               {gen1.map((c, i) => (
                 <ContestantCard key={c.token_address} c={c} index={founders.length + i} prices={prices} />
@@ -302,7 +300,7 @@ export function Contestants() {
         {/* ── Generation 2 ── */}
         {gen2.length > 0 && (
           <>
-            <SectionDivider label="Generation 2" sublabel="The first grandchild — a dynasty forms" inView={inView} delay={0.45} />
+            <SectionDivider label="GENERATION TWO — HISTORIC" sublabel="The first grandchild in memecoin history. Four bloodlines. One entity." inView={inView} delay={0.45} />
             <div className="flex justify-center">
               <div className="w-full max-w-lg">
                 {gen2.map((c, i) => (
