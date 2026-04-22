@@ -118,20 +118,40 @@ export function Hero() {
         {/* Chapter 2 */}
         <motion.div
           style={{ opacity: c2Opacity, y: c2Y }}
-          className="absolute inset-0 z-30 flex flex-col items-center justify-center text-center px-6 pointer-events-none"
+          className="absolute inset-0 z-30 flex flex-col items-center justify-center text-center px-6"
         >
-          <h1 className="font-display text-4xl md:text-6xl lg:text-7xl tracking-tight leading-tight text-text-primary">
+          <h1 className="font-display text-4xl md:text-6xl lg:text-7xl tracking-tight leading-tight text-text-primary pointer-events-none">
             Nine tokens entered the house.
             <br />
             <span className="bg-gradient-to-r from-[#F5C842] via-[#FF6B2B] to-[#A855F7] bg-clip-text text-transparent">
               Five were born inside.
             </span>
           </h1>
-          <p className="text-text-secondary text-lg md:text-xl mt-8 font-light max-w-xl leading-relaxed">
+          <p className="text-text-secondary text-lg md:text-xl mt-8 font-light max-w-xl leading-relaxed pointer-events-none">
             One grandchild just learned to speak.
             <br className="hidden sm:block" />
             All on-chain. All live. Watch now.
           </p>
+          <div className="flex flex-col sm:flex-row items-center gap-4 mt-10">
+            <Link href="/feed">
+              <motion.div
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.97 }}
+                className="bg-gradient-to-r from-[#F5C842] to-[#A855F7] text-obsidian font-medium px-10 py-4 rounded-full shadow-[0_0_50px_-10px_#F5C842] hover:shadow-[0_0_70px_-5px_#A855F7] transition-shadow text-base cursor-pointer w-full sm:w-auto"
+              >
+                Watch the Feed →
+              </motion.div>
+            </Link>
+            <Link href="/tree">
+              <motion.div
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.97 }}
+                className="bg-black/30 backdrop-blur-md border border-white/10 text-text-primary px-10 py-4 rounded-full hover:border-[#F59E0B] hover:text-[#F59E0B] transition-colors text-base cursor-pointer w-full sm:w-auto"
+              >
+                See the Bloodline
+              </motion.div>
+            </Link>
+          </div>
         </motion.div>
 
         {/*
