@@ -25,6 +25,11 @@ const TOKEN_COLORS: Record<string, string> = {
   PHARKI:   "#e879f9",
 }
 
+const GEN_BADGE_COLOR: Record<number, string> = {
+  1: "#F59E0B",
+  2: "#A855F7",
+}
+
 const TRAIT_LABELS: Record<string, string> = {
   verbosity:           "VERBOSITY",
   aggression:          "AGGRESSION",
@@ -34,18 +39,15 @@ const TRAIT_LABELS: Record<string, string> = {
 }
 
 function getRole(c: Contestant): string {
-  if (c.genesis_archetype) return c.genesis_archetype;
-  if (c.generation > 0) return `Gen ${c.generation} · Born in The House`;
-  return "Contestant";
+  if (c.genesis_archetype) return c.genesis_archetype
+  if (c.generation > 0) return `Gen ${c.generation} · Born in The House`
+  return "Contestant"
 }
 
-function TraitBar({
-  name, value, color, delay,
-}: { name: string; value: number; color: string; delay: number }) {
+function TraitBar({ name, value, color, delay }: { name: string; value: number; color: string; delay: number }) {
   const ref = useRef<HTMLDivElement>(null)
   const inView = useInView(ref, { once: true })
   const pct = Math.round(value * 100)
-
   return (
     <div ref={ref} className="mb-3">
       <div className="flex justify-between mb-1">
@@ -65,58 +67,57 @@ function TraitBar({
   )
 }
 
-function ContestantCard({
-  c, index, isChild, prices,
-}: { c: Contestant; index: number; isChild: boolean; prices: PricesMap | null }) {
-  const ref   = useRef<HTMLDivElement>(null)
-  const inView = useInView(ref, { once: true, margin: "-60px" })
-  const color  = TOKEN_COLORS[c.ticker] ?? "#F5F5F7"
+function CardInner({ c, prices }: { c: Contestant; prices: PricesMap | null }) {
+  const color = TOKEN_COLORS[c.ticker] ?? "#F5F5F7"
   const chatEnabled = isChatEnabled(c.token_address)
   const traits = Object.entries(c.behavioral_traits)
   const pd = prices?.[c.ticker]
+  const badgeColor = c.generation > 0 ? (GEN_BADGE_COLOR[c.generation] ?? "#A855F7") : null
+  const isGen2 = c.generation === 2
+  const isChild = c.generation > 0
+  const padding = isChild ? "1.5rem" : "2rem"
 
   return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 32 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.8, delay: index * 0.15 }}
-      className="relative rounded-2xl overflow-hidden group"
-      style={{
-        background: "#0D0D14",
-        border: `1px solid ${color}${isChild ? "28" : "18"}`,
-        ...(isChild ? { boxShadow: `0 0 40px ${color}0A` } : {}),
-      }}
-    >
+    <div className="relative overflow-hidden rounded-2xl group h-full" style={{ background: "#0D0D14" }}>
       {/* Top accent line */}
-      <div
-        className="absolute top-0 left-0 right-0 h-px"
-        style={{ background: `linear-gradient(90deg, transparent, ${color}88, transparent)` }}
-      />
+      <div className="absolute top-0 left-0 right-0 h-px" style={{
+        background: isGen2
+          ? "linear-gradient(90deg, transparent, #F59E0B88, #A855F788, transparent)"
+          : `linear-gradient(90deg, transparent, ${color}88, transparent)`,
+      }} />
 
-      {/* Ambient glow */}
+      {/* Hover glow */}
       <div
         className="absolute -top-20 left-1/2 -translate-x-1/2 w-64 h-64 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
         style={{ background: `${color}08` }}
       />
 
-      <div className={isChild ? "p-6" : "p-8"}>
+      <div style={{ padding }}>
+        {/* Gen 2 historic badge */}
+        {isGen2 && (
+          <div className="mb-5 text-center">
+            <span
+              className="inline-block text-[9px] tracking-[0.3em] uppercase font-mono px-3 py-1 rounded-full"
+              style={{ background: "#A855F718", color: "#A855F7", border: "1px solid #A855F744" }}
+            >
+              First second-generation token in The House history
+            </span>
+          </div>
+        )}
+
         {/* Header */}
         <div className="flex items-start justify-between mb-8">
           <div>
-            <div className="flex items-center gap-2 mb-1">
-              <span
-                className="text-[10px] tracking-[0.25em] uppercase font-medium"
-                style={{ color }}
-              >
+            <div className="flex items-center gap-2 mb-1 flex-wrap">
+              <span className="text-[10px] tracking-[0.25em] uppercase font-medium" style={{ color }}>
                 ${c.ticker}
               </span>
-              {isChild && (
+              {badgeColor && (
                 <span
                   className="text-[9px] tracking-[0.2em] uppercase px-1.5 py-0.5 rounded-full font-medium"
-                  style={{ background: `${color}18`, color, border: `1px solid ${color}44` }}
+                  style={{ background: `${badgeColor}18`, color: badgeColor, border: `1px solid ${badgeColor}44` }}
                 >
-                  GEN 1
+                  GEN {c.generation}
                 </span>
               )}
               {pd?.price != null && (
@@ -128,17 +129,13 @@ function ContestantCard({
                 </span>
               )}
             </div>
-            <h3
-              className={`font-display text-text-primary tracking-tight ${isChild ? "text-2xl" : "text-3xl"}`}
-            >
+            <h3 className={`font-display text-text-primary tracking-tight ${isChild ? "text-2xl" : "text-3xl"}`}>
               {c.name}
             </h3>
             <p className="text-text-secondary text-sm mt-1">{getRole(c)}</p>
           </div>
           <div className="text-right">
-            <div className="text-[10px] tracking-[0.2em] uppercase mb-1" style={{ color }}>
-              Mood
-            </div>
+            <div className="text-[10px] tracking-[0.2em] uppercase mb-1" style={{ color }}>Mood</div>
             <div className="text-text-primary text-sm">{pd?.mood ?? "—"}</div>
           </div>
         </div>
@@ -146,27 +143,14 @@ function ContestantCard({
         {/* Trait bars */}
         <div className="mb-8 border-t border-white/5 pt-6">
           {traits.map(([key, val], i) => (
-            <TraitBar
-              key={key}
-              name={TRAIT_LABELS[key] ?? key.toUpperCase()}
-              value={val}
-              color={color}
-              delay={0.3 + i * 0.1}
-            />
+            <TraitBar key={key} name={TRAIT_LABELS[key] ?? key.toUpperCase()} value={val} color={color} delay={0.3 + i * 0.1} />
           ))}
         </div>
 
         {/* Last transmission */}
-        <div
-          className="rounded-xl p-4 mb-8"
-          style={{ background: `${color}08`, border: `1px solid ${color}18` }}
-        >
-          <div className="text-[10px] tracking-[0.2em] uppercase text-text-secondary mb-2">
-            Last transmission
-          </div>
-          <p className="text-text-secondary text-sm leading-relaxed italic">
-            &ldquo;{c.signature_phrase}&rdquo;
-          </p>
+        <div className="rounded-xl p-4 mb-8" style={{ background: `${color}08`, border: `1px solid ${color}18` }}>
+          <div className="text-[10px] tracking-[0.2em] uppercase text-text-secondary mb-2">Last transmission</div>
+          <p className="text-text-secondary text-sm leading-relaxed italic">&ldquo;{c.signature_phrase}&rdquo;</p>
         </div>
 
         {/* CTA */}
@@ -187,10 +171,60 @@ function ContestantCard({
             style={{ border: `1px solid ${color}44`, color, background: `${color}08` }}
             disabled
           >
-            {isChild ? "Talk to GNSP — Season 2" : `Talk to ${c.name} — Season 2`}
+            Talk to {c.name} — Season 2
           </motion.button>
         )}
       </div>
+    </div>
+  )
+}
+
+function ContestantCard({ c, index, prices }: { c: Contestant; index: number; prices: PricesMap | null }) {
+  const ref = useRef<HTMLDivElement>(null)
+  const inView = useInView(ref, { once: true, margin: "-60px" })
+  const color = TOKEN_COLORS[c.ticker] ?? "#F5F5F7"
+  const isGen2 = c.generation === 2
+  const isChild = c.generation > 0
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 32 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.8, delay: index * 0.12 }}
+      className="rounded-2xl"
+      style={isGen2 ? {
+        padding: "1px",
+        background: "linear-gradient(135deg, #F59E0B, #A855F7)",
+        boxShadow: "0 0 60px #A855F71A, 0 0 30px #F59E0B0D",
+      } : {
+        border: `1px solid ${color}${isChild ? "28" : "18"}`,
+        ...(isChild ? { boxShadow: `0 0 40px ${color}0A` } : {}),
+      }}
+    >
+      <CardInner c={c} prices={prices} />
+    </motion.div>
+  )
+}
+
+function SectionDivider({ label, sublabel, inView, delay }: { label: string; sublabel?: string; inView: boolean; delay: number }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={inView ? { opacity: 1 } : {}}
+      transition={{ duration: 0.6, delay }}
+      className="flex flex-col items-center gap-2 mb-8"
+    >
+      <div className="flex items-center gap-4 w-full">
+        <div className="flex-1 h-px bg-white/5" />
+        <span className="text-[10px] tracking-[0.3em] uppercase text-text-secondary whitespace-nowrap">
+          {label}
+        </span>
+        <div className="flex-1 h-px bg-white/5" />
+      </div>
+      {sublabel && (
+        <p className="text-[10px] text-text-secondary/60 tracking-wider font-mono">{sublabel}</p>
+      )}
     </motion.div>
   )
 }
@@ -201,7 +235,8 @@ export function Contestants() {
   const prices = usePrices()
 
   const founders = contestants.filter((c) => c.generation === 0)
-  const children = contestants.filter((c) => c.generation > 0)
+  const gen1     = contestants.filter((c) => c.generation === 1)
+  const gen2     = contestants.filter((c) => c.generation === 2)
 
   return (
     <section
@@ -240,38 +275,33 @@ export function Contestants() {
           Two tokens. Real personalities. Real memories. They already know each other.
         </motion.p>
 
-        {/* Founders */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        {/* ── Generation 0: Founders ── */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
           {founders.map((c, i) => (
-            <ContestantCard key={c.token_address} c={c} index={i} isChild={false} prices={prices} />
+            <ContestantCard key={c.token_address} c={c} index={i} prices={prices} />
           ))}
         </div>
 
-        {/* Gen 1 children — centered, slightly smaller */}
-        {children.length > 0 && (
+        {/* ── Generation 1 ── */}
+        {gen1.length > 0 && (
           <>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={inView ? { opacity: 1 } : {}}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="flex items-center gap-4 mb-6"
-            >
-              <div className="flex-1 h-px bg-white/5" />
-              <span className="text-[10px] tracking-[0.3em] uppercase text-text-secondary">
-                Generation 1
-              </span>
-              <div className="flex-1 h-px bg-white/5" />
-            </motion.div>
+            <SectionDivider label="Generation 1" sublabel="Born from the founders" inView={inView} delay={0.3} />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+              {gen1.map((c, i) => (
+                <ContestantCard key={c.token_address} c={c} index={founders.length + i} prices={prices} />
+              ))}
+            </div>
+          </>
+        )}
+
+        {/* ── Generation 2 ── */}
+        {gen2.length > 0 && (
+          <>
+            <SectionDivider label="Generation 2" sublabel="The first grandchild — a dynasty forms" inView={inView} delay={0.45} />
             <div className="flex justify-center">
-              <div className="w-full max-w-md">
-                {children.map((c, i) => (
-                  <ContestantCard
-                    key={c.token_address}
-                    c={c}
-                    index={founders.length + i}
-                    isChild
-                    prices={prices}
-                  />
+              <div className="w-full max-w-lg">
+                {gen2.map((c, i) => (
+                  <ContestantCard key={c.token_address} c={c} index={founders.length + gen1.length + i} prices={prices} />
                 ))}
               </div>
             </div>
